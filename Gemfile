@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem "slim-rails"
+gem "slim-rails", "~> 3.1"
 gem "trailblazer-rails", "0.3.2"
 
 group :development, :test do
