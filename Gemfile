@@ -37,6 +37,7 @@ gem "cells-slim", "0.0.5"
 gem "simple_form", "~> 3.2"
 gem "ar_after_transaction"
 gem "httparty"
+gem "sidekiq", "~> 4.2"
 
 group :development, :test do
   gem "pry-byebug"
