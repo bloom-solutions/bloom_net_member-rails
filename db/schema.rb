@@ -13,13 +13,15 @@
 ActiveRecord::Schema.define(version: 20161124003651) do
 
   create_table "txns", force: :cascade do |t|
-    t.string   "recipient_first_name",             null: false
-    t.string   "recipient_last_name",              null: false
-    t.string   "ref_no",                           null: false
-    t.integer  "status",               default: 0
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.string   "recipient_first_name",                 null: false
+    t.string   "recipient_last_name",                  null: false
+    t.string   "ref_no",                               null: false
+    t.string   "status"
+    t.decimal  "amount",               default: "0.0", null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.index ["ref_no"], name: "index_txns_on_ref_no", unique: true
+    t.index ["status"], name: "index_txns_on_status"
   end
 
 end

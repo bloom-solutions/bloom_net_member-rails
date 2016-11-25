@@ -30,11 +30,16 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "slim-rails", "~> 3.1"
-gem "trailblazer-rails", "0.3.2"
+gem "trailblazer-rails", "0.4.0"
+gem "cells-rails", "0.0.6"
+gem "trailblazer-cells", "0.0.3"
+gem "cells-slim", "0.0.5"
+gem "simple_form", "~> 3.2"
+gem "ar_after_transaction"
+gem "httparty"
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem "pry-byebug"
 end
 
 group :development do
