@@ -38,6 +38,7 @@ gem "simple_form", "~> 3.2"
 gem "ar_after_transaction"
 gem "httparty"
 gem "sidekiq", "~> 4.2"
+gem "pg", "0.19.0"
 
 group :development, :test do
   gem "pry-byebug"
