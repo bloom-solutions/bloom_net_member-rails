@@ -19,3 +19,12 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+.DS_Store
+
+## Environment normalisation:
+/.bundle
+/vendor/bundle
+
+latest.dump
+config/database.yml
+.env.local
