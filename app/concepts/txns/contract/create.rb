@@ -4,6 +4,7 @@ module Txns
 
       property :recipient_first_name
       property :recipient_last_name
+      property :amount
 
     end
   end

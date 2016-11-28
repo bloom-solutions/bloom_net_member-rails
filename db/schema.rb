@@ -12,16 +12,19 @@
 
 ActiveRecord::Schema.define(version: 20161124003651) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "txns", force: :cascade do |t|
     t.string   "recipient_first_name",                 null: false
     t.string   "recipient_last_name",                  null: false
-    t.string   "ref_no",                               null: false
+    t.string   "ref_no"
     t.string   "status"
     t.decimal  "amount",               default: "0.0", null: false
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
-    t.index ["ref_no"], name: "index_txns_on_ref_no", unique: true
-    t.index ["status"], name: "index_txns_on_status"
+    t.index ["ref_no"], name: "index_txns_on_ref_no", unique: true, using: :btree
+    t.index ["status"], name: "index_txns_on_status", using: :btree
   end
 
 end

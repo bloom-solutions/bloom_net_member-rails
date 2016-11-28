@@ -39,6 +39,7 @@ gem "ar_after_transaction"
 gem "httparty"
 gem "sidekiq", "~> 4.2"
 gem "pg", "0.19.0"
+gem "light-service", "0.6.1"
 
 group :development, :test do
   gem "pry-byebug"

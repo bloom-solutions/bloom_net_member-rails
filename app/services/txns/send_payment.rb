@@ -8,11 +8,12 @@ module Txns
     executed do |c|
       txn = c.txn
 
-      uri = URI.parse(ENV["STELLAR_BRIDGE_HOST"])
+      uri = URI(ENV["STELLAR_BRIDGE_HOST"])
       uri.path = "/payment"
 
+      headers = {"Content-Type" => "application/json"}
       body = {
-        desintation: ENV["BLOOM_NET_CENTRAL_BASE_ACCOUNT"],
+        destination: ENV["BLOOM_NET_CENTRAL_BASE_ACCOUNT"],
         amount: txn.amount,
         asset_code: "PHP",
         asset_issuer: ENV["BLOOM_NET_ISSUER_ACCOUNT"],
@@ -20,7 +21,7 @@ module Txns
         memo: txn.ref_no,
       }.to_json
 
-      c.bridge_response = HTTParty.post(uri, body: body)
+      c.bridge_response = HTTParty.post(uri.to_s, headers: headers, body: body)
     end
 
   end
