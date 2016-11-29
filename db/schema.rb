@@ -19,10 +19,12 @@ ActiveRecord::Schema.define(version: 20161124003651) do
     t.string   "recipient_first_name",                 null: false
     t.string   "recipient_last_name",                  null: false
     t.string   "ref_no"
+    t.string   "external_id"
     t.string   "status"
     t.decimal  "amount",               default: "0.0", null: false
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.index ["external_id"], name: "index_txns_on_external_id", using: :btree
     t.index ["ref_no"], name: "index_txns_on_ref_no", unique: true, using: :btree
     t.index ["status"], name: "index_txns_on_status", using: :btree
   end

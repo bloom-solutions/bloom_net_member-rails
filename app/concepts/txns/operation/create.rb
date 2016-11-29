@@ -13,12 +13,13 @@ module Txns
       def process(params)
         validate(params[:txn]) do |f|
           f.save
+          dispatch! :after_create
         end
       end
 
       def after_create(form, **)
         ActiveRecord::Base.after_transaction do
-          Txns::Callback::AfterCreateJob.perform_later(txn)
+          Txns::Callback::AfterCreateJob.perform_later(form.model)
         end
       end
 
