@@ -18,6 +18,9 @@ module Txns
           # responses. This way, we can recover if something goes wrong along
           # the way.
           SendPayment,
+          # TODO: best to get callback from central to know what status to
+          # become
+          SetFunded,
         )
         # wait callback from central about `funded`, update status
         # after this:
