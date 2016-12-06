@@ -74,20 +74,16 @@ div id='page-wrapper-no-sidebar'
               = f.input :recipient_last_name
           = f.input :recipient_mobile
           = f.input :amount, placeholder: "500", input_html: { value: nil }
-          = f.button :submit
+          = f.button :submit, class: "btn-primary btn-lg"
 
     div class='col-md-5'
       div class='well'
         h4 Find Remittance
-        form role='form'
-          div class='form-group'
-            label Name of Recipient
-            input class='form-control input-lg'
-          div class='form-group'
-            label Tracking Number
-            input class='form-control input-lg'
-          button type="submit" class="btn btn-secondary btn-lg" Find
-
+        = simple_form_for [:dashboard, @claim] do |f|
+          = f.input :recipient_first_name
+          = f.input :recipient_last_name
+          = f.input :ref_no
+          = f.button :submit, class: "btn-secondary btn-lg"
 
   div class='row'
     div class='col-lg-12'

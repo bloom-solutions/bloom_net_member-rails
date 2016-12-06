@@ -3,6 +3,7 @@ module Dashboard
 
     def index
       @txn = Txn.new
+      @claim = Claim.new
     end
 
   end

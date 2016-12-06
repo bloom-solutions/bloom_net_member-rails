@@ -18,6 +18,7 @@ en:
         recipient_first_name: "Recipient's First Name"
         recipient_last_name: "Recipient's Last Name"
         recipient_mobile: "Recipient's Mobile No."
+        ref_no: "Tracking Number"
     #   user:
     #     new:
     #       email: 'E-mail to sign in.'
