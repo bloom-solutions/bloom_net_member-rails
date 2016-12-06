@@ -92,9 +92,24 @@ nav.navbar.navbar-default.navbar-static-top role='navigation'
         tr
           th Sender
           th Recipient
+          th Status
           th Tracking No.
           th Amount
           th Date
           th>
         - @txns.each do |txn|
           = cell(Txns::Cell::Show, txn).(:row)
+
+  .row
+    .col-lg-12.col-xl-6
+      h4 Claims
+      table.table.table-striped
+        tr
+          th Recipient
+          th Tracking No.
+          th Remittance Status
+          th Amount
+          th Date
+          th>
+        - @claims.each do |claim|
+          = cell(Claims::Cell::Show, claim).(:row)
