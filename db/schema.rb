@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202022559) do
+ActiveRecord::Schema.define(version: 20161206005903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,9 @@ ActiveRecord::Schema.define(version: 20161202022559) do
     t.decimal  "amount",               default: "0.0", null: false
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
+    t.string   "sender_first_name"
+    t.string   "sender_last_name"
+    t.string   "recipient_mobile"
     t.index ["external_id"], name: "index_txns_on_external_id", using: :btree
     t.index ["ref_no"], name: "index_txns_on_ref_no", unique: true, using: :btree
     t.index ["status"], name: "index_txns_on_status", using: :btree
