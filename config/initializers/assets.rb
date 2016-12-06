@@ -8,4 +8,4 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( bootstrap/css/bootstrap.min.css metisMenu/metisMenu.min.css sb-admin-2.min.css morrisjs/morris.css font-awesome/css/font-awesome.min.css jquery/jquery.min.js bootstrap/js/bootstrap.min.js metisMenu/metisMenu.min.js morrisjs/morris.min.js morris-data.js sb-admin-2.min.js)
