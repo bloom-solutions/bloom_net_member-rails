@@ -1,0 +1,13 @@
+tr
+  td= sender_full_name
+  td= recipient_full_name
+  td= ref_no
+  td= amount
+  td= date
+  td
+    = link_to "#", class: "btn btn-default btn-xs", role: "button" do
+      i.fa.fa-eye
+      span.text.hidden-xs< View
+    = link_to "#", class: "btn btn-default btn-xs", role: "button" do
+      i.fa.fa-remove
+      span.text.hidden-xs< Cancel

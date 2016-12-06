@@ -86,8 +86,8 @@ nav.navbar.navbar-default.navbar-static-top role='navigation'
           = f.button :submit, class: "btn-secondary btn-lg"
 
   .row
-    .col-lg-12
-
+    .col-lg-12.col-xl-6
+      h4 Sends
       table.table.table-striped
         tr
           th Sender
@@ -95,69 +95,6 @@ nav.navbar.navbar-default.navbar-static-top role='navigation'
           th Tracking No.
           th Amount
           th Date
-          th In/Out
-          th &nbsp;
-        tr
-          td Juan de la Cruz
-          td Alex Santos
-          td BLM987654321
-          td 500.00
-          td 11/28 - 12:30pm
-          td
-            i.fa.fa-angle-double-up
-            |  Out
-          td
-            a href="#"
-              i.fa.fa-eye
-              |  View
-            | &nbsp;&nbsp;
-            a href="#"
-              i.fa.fa-remove
-              |  Cancel
-        tr
-          td Helen Cruz
-          td Jun de los Reyes
-          td BLM987654320
-          td 1500.00
-          td 11/28 - 12:15pm
-          td
-            i.fa.fa-angle-double-down
-            |  In
-          td
-            a href="#"
-              i.fa.fa-eye
-              |  View
-        tr
-          td Ann Cortes
-          td Justin David
-          td BLM987654319
-          td 850.00
-          td 11/28 - 11:30am
-          td
-            i.fa.fa-angle-double-up
-            |  Out
-          td
-            a href="#"
-              i.fa.fa-eye
-              |  View
-            | &nbsp;&nbsp;
-            a href="#"
-              i.fa.fa-remove
-              |  Cancel
-        tr
-          td Roda Cris
-          td Ramon Tayag
-          td BLM987654318
-          td 2500.00
-          td 11/28 - 11:10am
-          td
-            i.fa.fa-angle-double-up
-            |  Out
-          td
-            a href="#"
-              i.fa.fa-eye
-              |  View
-            | &nbsp;&nbsp;
-            a href="#"
-              i.fa.fa-remove
-              |  Cancel
+          th>
+        - @txns.each do |txn|
+          = cell(Txns::Cell::Show, txn).(:row)
