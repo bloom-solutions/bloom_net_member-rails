@@ -10,8 +10,8 @@ module Txns
       uri.path = "/api/v1/txns"
       body = {
         txn: {
-          first_name: c.txn.recipient_first_name,
-          last_name: c.txn.recipient_last_name,
+          recipient_first_name: c.txn.recipient_first_name,
+          recipient_last_name: c.txn.recipient_last_name,
         }
       }.to_json
       headers = {"Content-Type" => "application/json"}
