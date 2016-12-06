@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   namespace :dashboard do
+    get '/' => 'home#index'
     resources :txns, only: %i[new create show]
     resources :claims, only: %i[new create show]
   end

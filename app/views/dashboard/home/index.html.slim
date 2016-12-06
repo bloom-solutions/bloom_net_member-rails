@@ -1,0 +1,167 @@
+nav class='navbar navbar-default navbar-static-top' role='navigation'
+  div class='navbar-header'
+    button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" 
+      span class="sr-only" Toggle navigation
+      span class="icon-bar" 
+      span class="icon-bar" 
+      span class="icon-bar" 
+    = link_to page_title, "/dashboard/", class: "navbar-brand"
+  
+  ul class="nav navbar-top-links navbar-right"
+    li class="dropdown"
+      a class="dropdown-toggle" data-toggle="dropdown" href="#"
+        i class="fa fa-user fa-fw"
+        i class="fa fa-caret-down"
+      ul class="dropdown-menu dropdown-user"
+        li
+          a href="#"
+            i class="fa fa-user fa-fw"
+            |  Agent Profile
+        li
+          a href="#"
+            i class="fa fa-gear fa-fw"
+            |  Settings
+        li class='divider'
+        li
+          a href="#"
+            i class='fa fa-sign-out fa-fw'
+            |  Logout
+
+div id='page-wrapper-no-sidebar'
+  div class='row'
+    div class='col-md-4'
+      div class='panel panel-primary'
+        div class='panel-heading'
+          div class='row'
+            div class='col-xs-3'
+              i class="fa fa-angle-double-up fa-5x"
+            div class='col-xs-9 text-right'
+              div class='huge' 93
+              div Outbound Today
+    div class='col-md-4'
+      div class='panel panel-yellow'
+        div class='panel-heading'
+          div class='row'
+            div class='col-xs-3'
+              i class="fa fa-angle-double-down fa-5x"
+            div class='col-xs-9 text-right'
+              div class='huge' 32
+              div Inbound Today
+    div class='col-md-4'
+      div class='panel panel-green'
+        div class='panel-heading'
+          div class='row'
+            div class='col-xs-3'
+              i class="fa fa-users fa-5x"
+            div class='col-xs-9 text-right'
+              div class='huge' 29
+              div New Customers Today
+
+  div class='row'
+    div class='col-md-7'
+      div class='well'
+        h4 New Remittance
+        = simple_form_for [:dashboard, @txn] do |f|
+          .row
+            .col-md-6
+              = f.input :sender_first_name
+            .col-md-6
+              = f.input :sender_last_name
+          .row
+            .col-md-6
+              = f.input :recipient_first_name
+            .col-md-6
+              = f.input :recipient_last_name
+          = f.input :recipient_mobile
+          = f.input :amount, placeholder: "500", input_html: { value: nil }
+          = f.button :submit
+
+    div class='col-md-5'
+      div class='well'
+        h4 Find Remittance
+        form role='form'
+          div class='form-group'
+            label Name of Recipient
+            input class='form-control input-lg'
+          div class='form-group'
+            label Tracking Number
+            input class='form-control input-lg'
+          button type="submit" class="btn btn-secondary btn-lg" Find
+
+
+  div class='row'
+    div class='col-lg-12'
+
+      table class='table table-striped'
+        tr
+          th Sender
+          th Recipient
+          th Tracking No.
+          th Amount
+          th Date
+          th In/Out
+          th &nbsp;
+        tr
+          td Juan de la Cruz
+          td Alex Santos
+          td BLM987654321
+          td 500.00
+          td 11/28 - 12:30pm
+          td
+            i class='fa fa-angle-double-up'
+            |  Out
+          td
+            a href="#"
+              i class='fa fa-eye'
+              |  View
+            | &nbsp;&nbsp;
+            a href="#"
+              i class='fa fa-remove'
+              |  Cancel
+        tr
+          td Helen Cruz
+          td Jun de los Reyes
+          td BLM987654320
+          td 1500.00
+          td 11/28 - 12:15pm
+          td
+            i class='fa fa-angle-double-down'
+            |  In
+          td
+            a href="#"
+              i class='fa fa-eye'
+              |  View
+        tr
+          td Ann Cortes
+          td Justin David
+          td BLM987654319
+          td 850.00
+          td 11/28 - 11:30am
+          td
+            i class='fa fa-angle-double-up'
+            |  Out
+          td
+            a href="#"
+              i class='fa fa-eye'
+              |  View
+            | &nbsp;&nbsp;
+            a href="#"
+              i class='fa fa-remove'
+              |  Cancel
+        tr
+          td Roda Cris
+          td Ramon Tayag
+          td BLM987654318
+          td 2500.00
+          td 11/28 - 11:10am
+          td
+            i class='fa fa-angle-double-up'
+            |  Out
+          td
+            a href="#"
+              i class='fa fa-eye'
+              |  View
+            | &nbsp;&nbsp;
+            a href="#"
+              i class='fa fa-remove'
+              |  Cancel
