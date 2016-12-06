@@ -1,4 +1,4 @@
-class BridgeReceiveCallback < ActiveRecord::Migration[5.0]
+class CreateBridgeReceiveCallbacks < ActiveRecord::Migration[5.0]
   def change
     create_table :bridge_receive_callbacks do |t|
       t.integer :external_id, limit: 8, null: false

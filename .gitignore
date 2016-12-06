@@ -19,6 +19,7 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+config/database.yml
 .DS_Store
 
 ## Environment normalisation:
@@ -26,5 +27,4 @@
 /vendor/bundle
 
 latest.dump
-config/database.yml
 .env.local
