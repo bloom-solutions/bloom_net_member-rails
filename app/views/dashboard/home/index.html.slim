@@ -61,32 +61,20 @@ div id='page-wrapper-no-sidebar'
     div class='col-md-7'
       div class='well'
         h4 New Remittance
-        form role='form'
-          div.row
-            div.col-md-6
-              div class='form-group'
-                label Sender's First Name
-                input class='form-control input-lg'
-            div.col-md-6
-              div class='form-group'
-                label Sender's Last Name
-                input class='form-control input-lg'
-          div.row
-            div.col-md-6
-              div class='form-group'
-                label Recipient's First Name
-                input class='form-control input-lg'
-            div.col-md-6
-              div class='form-group'
-                label Recipient's Last Name
-                input class='form-control input-lg'
-          div class='form-group'
-            label Recipient's Mobile No.
-            input class='form-control input-lg'
-          div class='form-group'
-            label Amount
-            input type='number' class='form-control input-lg' placeholder="500"
-          button type="submit" class="btn btn-primary btn-lg" Create
+        = simple_form_for [:dashboard, @txn] do |f|
+          .row
+            .col-md-6
+              = f.input :sender_first_name
+            .col-md-6
+              = f.input :sender_last_name
+          .row
+            .col-md-6
+              = f.input :recipient_first_name
+            .col-md-6
+              = f.input :recipient_last_name
+          = f.input :recipient_mobile
+          = f.input :amount, placeholder: "500", input_html: { value: nil }
+          = f.button :submit
 
     div class='col-md-5'
       div class='well'
