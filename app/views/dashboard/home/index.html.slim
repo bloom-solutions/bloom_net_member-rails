@@ -1,6 +1,8 @@
 = cell(Dashboard::Cell::Nav).()
 
 .page-wrapper-no-sidebar
+  = cell(Dashboard::Cell::Stats).()
+
   .row
     .col-xs-6
       = link_to new_dashboard_txn_path, class: "btn btn-primary btn-full" do
