@@ -1,11 +1,14 @@
 = simple_form_for [:dashboard, model] do |f|
   .row
-    .col-xs-6.col-sm-4
+    .col-md-6
+      = f.input :sender_first_name
+    .col-md-6
+      = f.input :sender_last_name
+  .row
+    .col-md-6
       = f.input :recipient_first_name
-    .col-xs-6.col-sm-4
+    .col-md-6
       = f.input :recipient_last_name
-    .col-xs-6.col-sm-4
-      = f.input :amount
-
-  .btn-group
-    = f.submit "Create Txn"
+  = f.input :recipient_mobile
+  = f.input :amount, placeholder: "500", input_html: { value: nil }
+  = f.button :submit, class: "btn-primary btn-lg"

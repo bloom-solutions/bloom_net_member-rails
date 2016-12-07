@@ -1,11 +1,5 @@
 = simple_form_for [:dashboard, model] do |f|
-  .row
-    .col-xs-6.col-sm-4
-      = f.input :recipient_first_name
-    .col-xs-6.col-sm-4
-      = f.input :recipient_last_name
-    .col-xs-6.col-sm-4
-      = f.input :ref_no
-
-  .btn-group
-    = f.submit "Create Claim"
+  = f.input :recipient_first_name
+  = f.input :recipient_last_name
+  = f.input :ref_no
+  = f.button :submit, class: "btn-secondary btn-lg"

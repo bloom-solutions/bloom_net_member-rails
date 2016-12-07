@@ -40,6 +40,7 @@ gem "httparty"
 gem "sidekiq", "~> 4.2"
 gem "pg", "0.19.0"
 gem "light-service", "0.6.1"
+gem "dry-validation", "0.10.4"
 
 group :development, :test do
   gem "pry-byebug"

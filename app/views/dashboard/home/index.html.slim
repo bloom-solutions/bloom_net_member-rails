@@ -28,62 +28,17 @@ nav.navbar.navbar-default.navbar-static-top role='navigation'
             |  Logout
 
 .page-wrapper-no-sidebar
-  /.row
-  /  .col-md-4
-  /    .panel.panel-primary
-  /      .panel-heading
-  /        .row
-  /          .col-xs-3
-  /            i.fa.fa-angle-double-up.fa-5x
-  /          .col-xs-9.text-right
-  /            .huge 93
-  /            div Outbound Today
-  /  .col-md-4
-  /    .panel.panel-yellow
-  /      .panel-heading
-  /        .row
-  /          .col-xs-3
-  /            i.fa.fa-angle-double-down.fa-5x
-  /          .col-xs-9.text-right
-  /            .huge 32
-  /            div Inbound Today
-  /  .col-md-4
-  /    .panel.panel-green
-  /      .panel-heading
-  /        .row
-  /          .col-xs-3
-  /            i.fa.fa-users.fa-5x
-  /          .col-xs-9.text-right
-  /            .huge 29
-  /            div New Customers Today
-
   .row
-    .col-md-7
-      .well
-        h4 New Remittance
-        = simple_form_for [:dashboard, @txn] do |f|
-          .row
-            .col-md-6
-              = f.input :sender_first_name
-            .col-md-6
-              = f.input :sender_last_name
-          .row
-            .col-md-6
-              = f.input :recipient_first_name
-            .col-md-6
-              = f.input :recipient_last_name
-          = f.input :recipient_mobile
-          = f.input :amount, placeholder: "500", input_html: { value: nil }
-          = f.button :submit, class: "btn-primary btn-lg"
-
-    .col-md-5
-      .well
-        h4 Find Remittance
-        = simple_form_for [:dashboard, @claim] do |f|
-          = f.input :recipient_first_name
-          = f.input :recipient_last_name
-          = f.input :ref_no
-          = f.button :submit, class: "btn-secondary btn-lg"
+    .col-xs-6
+      = link_to new_dashboard_txn_path, class: "btn btn-primary btn-full" do
+        i.fa.fa-paper-plane
+        br
+        span.text Send
+    .col-xs-6
+      = link_to new_dashboard_claim_path, class: "btn btn-primary btn-full" do
+        i.fa.fa-inbox
+        br
+        span.text Claim
 
   .row
     .col-lg-12.col-xl-6

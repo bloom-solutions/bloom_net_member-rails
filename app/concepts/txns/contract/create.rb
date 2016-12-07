@@ -9,6 +9,12 @@ module Txns
       property :recipient_mobile
       property :amount
 
+      validation :default do
+        required(:recipient_first_name).filled
+        required(:recipient_last_name).filled
+        required(:amount).filled
+      end
+
     end
   end
 end
