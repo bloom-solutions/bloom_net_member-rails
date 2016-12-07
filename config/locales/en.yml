@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+  helpers:
+    submit:
+      txn:
+        create: "Create"
+      claim:
+        create: "Create"
