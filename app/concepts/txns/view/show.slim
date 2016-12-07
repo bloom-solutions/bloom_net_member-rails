@@ -1,7 +1,11 @@
-ul
-  li= model.external_id
-  li= model.ref_no
-  li= model.recipient_first_name
-  li= model.recipient_last_name
-  li= model.amount
-  li= model.status
+dl
+  dt= h.t(:tracking_number)
+  dd= model.ref_no
+  dt= h.t(:recipient_first_name)
+  dd= model.recipient_first_name
+  dt= h.t(:recipient_last_name)
+  dd= model.recipient_last_name
+  dt Amount
+  dd= model.amount
+  dt Status
+  dd= model.status
