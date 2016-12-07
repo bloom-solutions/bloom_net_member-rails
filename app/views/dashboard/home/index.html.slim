@@ -1,31 +1,4 @@
-nav.navbar.navbar-default.navbar-static-top role='navigation'
-  .navbar-header
-    button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse"
-      span.sr-only Toggle navigation
-      span.icon-bar
-      span.icon-bar
-      span.icon-bar
-    = link_to page_title, dashboard_path, class: "navbar-brand"
-
-  ul.nav.navbar-top-links.navbar-right
-    li.dropdown
-      a.dropdown-toggle data-toggle="dropdown" href="#"
-        i.fa.fa-user.fa-fw
-        i.fa.fa-caret-down
-      ul.dropdown-menu.dropdown-user
-        li
-          a href="#"
-            i.fa.fa-user.fa-fw
-            |  Agent Profile
-        li
-          a href="#"
-            i.fa.fa-gear.fa-fw
-            |  Settings
-        li.divider
-        li
-          a href="#"
-            i.fa.fa-sign-out.fa-fw
-            |  Logout
+= cell(Dashboard::Cell::Nav).()
 
 .page-wrapper-no-sidebar
   .row
