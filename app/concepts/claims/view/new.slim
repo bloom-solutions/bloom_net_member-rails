@@ -1,5 +1,8 @@
 = simple_form_for [:dashboard, model] do |f|
-  = f.input :recipient_first_name
-  = f.input :recipient_last_name
+  .row
+    .col-md-6
+      = f.input :recipient_first_name
+    .col-md-6
+      = f.input :recipient_last_name
   = f.input :ref_no
-  = f.button :submit, class: "btn-secondary btn-lg"
+  = f.button :submit, class: "btn-primary btn-lg"
