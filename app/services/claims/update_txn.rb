@@ -9,7 +9,7 @@ module Claims
       txn = Txn.find_by!(ref_no: c.claim.ref_no)
 
       # should probably get this status from Central
-      txn.update_attributes!(status: "claiming")
+      txn.update_attributes!(remote_status: "claiming")
     end
 
   end

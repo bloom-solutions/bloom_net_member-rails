@@ -5,7 +5,7 @@ module Txns
     expects :txn
 
     executed do |c|
-      c.txn.update_attributes!(status: "funded")
+      c.txn.update_attributes!(remote_status: "funded")
     end
 
   end

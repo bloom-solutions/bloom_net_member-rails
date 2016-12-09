@@ -3,7 +3,7 @@ module Txns
     class Show < ApplicationCell
 
       property :ref_no
-      property :status
+      property :remote_status
 
       def row
         render :row
