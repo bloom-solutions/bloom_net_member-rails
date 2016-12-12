@@ -41,9 +41,14 @@ gem "sidekiq", "~> 4.2"
 gem "pg", "0.19.0"
 gem "light-service", "0.6.1"
 gem "dry-validation", "0.10.4"
+gem("bloom_net_central_client", {
+  github: "imacchiato/bloom_net_central_client-ruby",
+  ref: "793de6e",
+})
 
 group :development, :test do
   gem "pry-byebug"
+  gem "rspec-rails", "~> 3.5"
 end
 
 group :development do
@@ -53,6 +58,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem "spring-commands-rspec"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -6,7 +6,7 @@ module Txns
 
       def self.call(txn)
         with(txn: txn).reduce(
-          # post central
+          BloomNetCentral::InitializeClient,
           CreateRemoteTxn,
           # update txn with new info
           # TODO: move to create a response object, and process the response.

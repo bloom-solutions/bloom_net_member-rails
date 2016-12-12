@@ -6,6 +6,7 @@ module Claims
 
       def self.call(claim)
         with(claim: claim).reduce(
+          BloomNetCentral::InitializeClient,
           FindRemoteTxn,
           TriggerClaim,
           # UpdateClaim,

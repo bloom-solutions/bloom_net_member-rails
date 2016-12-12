@@ -2,16 +2,16 @@ module Txns
   class UpdateTxn
 
     extend LightService::Action
-    expects :create_response
+    expects :create_txn_response
 
     executed do |c|
-      parsed_body = JSON.parse(c.create_response.body).with_indifferent_access
+      remote_txn = c.create_txn_response.txn
 
       c.txn.update_attributes!(
-        external_id: parsed_body[:data][:id],
-        ref_no: parsed_body[:data][:ref_no],
+        external_id: remote_txn.id,
+        ref_no: remote_txn.ref_no,
         status: "funding",
-        remote_status: parsed_body[:data][:status],
+        remote_status: remote_txn.status,
       )
     end
 
