@@ -1,5 +1,12 @@
 class Claim < ActiveRecord::Base
 
+  enum(status: {
+    central_error: -1,
+    fresh: 0,
+    claiming: 1,
+    completed: 2,
+  })
+
   scope :created_at_or_after, ->(time) do
     where(arel_table[:created_at].lteq(time))
   end

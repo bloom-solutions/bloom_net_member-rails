@@ -5,14 +5,14 @@ module BridgeReceiveCallbacks
       def self.call(bridge_receive_callback)
         # should probably find by the claim's status, not its txn_status
         claim = Claim.find_by!(
-          txn_status: "funded",
+          status: "claiming",
           ref_no: bridge_receive_callback.memo,
         )
 
         # should really ask central what the status is. but what if we have
         # processed the BRC but central hasn't yet?
         claim.update_attributes!(
-          txn_status: "completed",
+          status: "completed",
           amount: bridge_receive_callback.amount,
         )
 

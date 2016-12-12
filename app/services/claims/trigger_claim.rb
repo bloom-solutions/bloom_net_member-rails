@@ -21,6 +21,8 @@ module Claims
 
       c.create_claim_response =
         HTTParty.post(uri.to_s, body: body, headers: headers)
+
+      c.claim.claiming!
     end
 
   end

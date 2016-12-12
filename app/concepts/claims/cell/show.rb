@@ -3,7 +3,7 @@ module Claims
     class Show < ApplicationCell
 
       property :ref_no
-      property :txn_status
+      property :status
 
       def row
         render :row

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161209002259) do
+ActiveRecord::Schema.define(version: 20161209062420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20161209002259) do
     t.string   "txn_status"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "status"
+    t.index ["status"], name: "index_claims_on_status", using: :btree
   end
 
   create_table "txns", force: :cascade do |t|
@@ -47,7 +49,6 @@ ActiveRecord::Schema.define(version: 20161209002259) do
     t.string   "recipient_last_name",                  null: false
     t.string   "ref_no"
     t.string   "external_id"
-    t.string   "status"
     t.decimal  "amount",               default: "0.0", null: false
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 20161209002259) do
     t.string   "sender_last_name"
     t.string   "recipient_mobile"
     t.string   "remote_status"
+    t.integer  "status",               default: 0
     t.index ["external_id"], name: "index_txns_on_external_id", using: :btree
     t.index ["ref_no"], name: "index_txns_on_ref_no", unique: true, using: :btree
     t.index ["status"], name: "index_txns_on_status", using: :btree

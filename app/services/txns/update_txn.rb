@@ -10,6 +10,7 @@ module Txns
       c.txn.update_attributes!(
         external_id: parsed_body[:data][:id],
         ref_no: parsed_body[:data][:ref_no],
+        status: "funding",
         remote_status: parsed_body[:data][:status],
       )
     end
