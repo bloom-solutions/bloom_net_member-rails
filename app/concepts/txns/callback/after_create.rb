@@ -8,10 +8,6 @@ module Txns
         with(txn: txn).reduce(
           BloomNetCentral::InitializeClient,
           CreateRemoteTxn,
-          # update txn with new info
-          # TODO: move to create a response object, and process the response.
-          # This way, if there was an issue posting we will see it, and we would
-          # know how to continue from there.
           UpdateTxn,
           # create payment in horizon
           # TODO: Move to create a payment object with its own status and

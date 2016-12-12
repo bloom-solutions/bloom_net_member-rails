@@ -5,14 +5,21 @@ module Txns
     expects :create_txn_response
 
     executed do |c|
-      remote_txn = c.create_txn_response.txn
+      response = c.create_txn_response
+      txn = c.txn
 
-      c.txn.update_attributes!(
-        external_id: remote_txn.id,
-        ref_no: remote_txn.ref_no,
-        status: "funding",
-        remote_status: remote_txn.status,
-      )
+      if response.success?
+        remote_txn = response.txn
+        txn.update_attributes!(
+          external_id: remote_txn.id,
+          ref_no: remote_txn.ref_no,
+          status: "funding",
+          remote_status: remote_txn.status,
+        )
+      else
+        txn.central_error!
+        c.fail! "Unable to create txn on Central: #{response.body}"
+      end
     end
 
   end

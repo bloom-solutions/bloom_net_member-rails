@@ -43,7 +43,7 @@ gem "light-service", "0.6.1"
 gem "dry-validation", "0.10.4"
 gem("bloom_net_central_client", {
   github: "imacchiato/bloom_net_central_client-ruby",
-  ref: "793de6e",
+  ref: "14dbd33",
 })
 
 group :development, :test do
