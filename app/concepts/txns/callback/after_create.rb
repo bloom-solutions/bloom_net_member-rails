@@ -9,6 +9,7 @@ module Txns
           BloomNetCentral::InitializeClient,
           CreateRemoteTxn,
           UpdateTxn,
+          StellarBridge::InitializeClient,
           # create payment in horizon
           # TODO: Move to create a payment object with its own status and
           # responses. This way, we can recover if something goes wrong along

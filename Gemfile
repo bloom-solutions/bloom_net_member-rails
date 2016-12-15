@@ -45,6 +45,7 @@ gem("bloom_net_central_client", {
   github: "imacchiato/bloom_net_central_client-ruby",
   ref: "14dbd33",
 })
+gem "bridge_client", "0.1.0"
 
 group :development, :test do
   gem "pry-byebug"
