@@ -1,14 +1,3 @@
-GIT
-  remote: git://github.com/imacchiato/bloom_net_central_client-ruby.git
-  revision: 14dbd33eee24e7c954e807a2d8bbd731d598dbad
-  ref: 14dbd33
-  specs:
-    bloom_net_central_client (0.1.0)
-      activesupport (>= 3.0)
-      gem_config (~> 0.3.1)
-      httparty (~> 0.14.0)
-      virtus (~> 1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -60,6 +49,12 @@ GEM
       descendants_tracker (~> 0.0.4)
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
+    bloom_net_central_client (0.1.0)
+      activesupport (>= 3.0)
+      api_client_base (~> 0.1.0)
+      gem_config (~> 0.3.1)
+      httparty (~> 0.14.0)
+      virtus (~> 1.0)
     bridge_client (0.1.0)
       api_client_base (~> 0.1.0)
       gem_config (~> 0.3.1)
@@ -318,7 +313,7 @@ PLATFORMS
 
 DEPENDENCIES
   ar_after_transaction
-  bloom_net_central_client!
+  bloom_net_central_client (~> 0.1.0)
   bridge_client (= 0.1.0)
   cells-rails (= 0.0.6)
   cells-slim (= 0.0.5)
