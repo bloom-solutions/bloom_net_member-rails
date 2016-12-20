@@ -7,7 +7,7 @@ module Dashboard
 
     def create
       run Claims::Operation::Create do |op|
-        return redirect_to(dashboard_claim_path(op.model))
+        return redirect_to(dashboard_path(op.model))
       end
 
       render action: :new
