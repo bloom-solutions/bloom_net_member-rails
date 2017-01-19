@@ -43,10 +43,12 @@ gem "light-service", "0.6.1"
 gem "dry-validation", "0.10.4"
 gem "bloom_net_central_client", "~> 0.1.0"
 gem "bridge_client", "0.1.0"
+gem "devise", "~> 4.2"
 
 group :development, :test do
   gem "pry-byebug"
   gem "rspec-rails", "~> 3.5"
+  gem "dotenv-rails"
 end
 
 group :development do

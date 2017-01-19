@@ -32,7 +32,9 @@ head
   = yield :page_styles
   
 body 
-  
+  p.notice= notice
+  p.alert= alert
+
   div.container
   
     = yield
