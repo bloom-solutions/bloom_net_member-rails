@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get '/' => 'home#index'
     resources :txns, only: %i[new create show]
     resources :claims, only: %i[new create show]
+    resource :user
   end
 
   namespace :api do
