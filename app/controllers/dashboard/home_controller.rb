@@ -1,5 +1,5 @@
 module Dashboard
-  class HomeController < ApplicationController
+  class HomeController < BaseController
 
     def index
       @txns = Txn.order(created_at: :desc).limit(5)

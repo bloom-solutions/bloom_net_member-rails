@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Installation
+
+- `rake db:seed`
+- Login with `admin@admin.com` / `administrator`
+- Change the email and password

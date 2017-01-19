@@ -1,5 +1,5 @@
 module Dashboard
-  class ClaimsController < ApplicationController
+  class ClaimsController < BaseController
 
     def new
       form Claims::Operation::Create

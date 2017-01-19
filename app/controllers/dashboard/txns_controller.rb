@@ -1,5 +1,5 @@
 module Dashboard
-  class TxnsController < ApplicationController
+  class TxnsController < BaseController
 
     def new
       form Txns::Operation::Create
