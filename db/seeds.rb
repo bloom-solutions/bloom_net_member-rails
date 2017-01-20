@@ -14,5 +14,6 @@ if user.nil?
     password: "administrator",
     password_confirmation: "administrator",
   )
-  user.confirm!
+  user.skip_confirmation!
+  user.save!
 end
