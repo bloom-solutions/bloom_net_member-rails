@@ -53,4 +53,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.active_job.queue_adapter = :sidekiq
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

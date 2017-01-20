@@ -2,31 +2,27 @@ module BridgeReceiveCallbacks
   module Operation
     class Create < ApplicationOperation
 
-      include Model
-      model BridgeReceiveCallback, :create
-
-      contract Contract::Create
-
-      include Dispatch
-      callback(:after_create) { on_change(:after_create) }
-
-      def process(params)
-        if brc = BridgeReceiveCallback.find_by(external_id: params[:id])
-          return brc
-        end
-
-        validate(params) do |f|
-          if f.save
-            dispatch! :after_create
-          end
-        end
-      end
+      step :find_model!
+      step :model_exists?, pass_fast: true
+      step Model(BridgeReceiveCallback, :new)
+      step self::Contract::Build(constant: Contract::Create)
+      step self::Contract::Validate()
+      step self::Contract::Persist()
+      step :enqueue_after_create_job!
 
       private
 
-      def after_create(form, **)
+      def find_model!(options, params:, **)
+        options["model"] = BridgeReceiveCallback.find_by(external_id: params[:id])
+      end
+
+      def model_exists?(options)
+        options["model"].present?
+      end
+
+      def enqueue_after_create_job!(options)
         ActiveRecord::Base.after_transaction do
-          Callback::AfterCreateJob.perform_later(form.model)
+          Callback::AfterCreateJob.perform_later(options[:model])
         end
       end
 

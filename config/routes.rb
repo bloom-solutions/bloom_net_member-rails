@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   namespace :dashboard do
     get '/' => 'home#index'
     resources :txns, only: %i[new create show]
     resources :claims, only: %i[new create show]
+    resource :user
   end
 
   namespace :api do

@@ -2,24 +2,15 @@ module Claims
   module Operation
     class Create < ApplicationOperation
 
-      include Model
-      model Claim, :create
+      step Model(Claim, :new)
+      step self::Contract::Build(constant: Contract::Create)
+      step self::Contract::Validate(key: "claim")
+      step self::Contract::Persist()
+      step :enqueue_after_create_job!
 
-      contract Contract::Create
-
-      include Dispatch
-      callback(:after_create) { on_change(:after_create) }
-
-      def process(params)
-        validate(params[:claim]) do |f|
-          f.save
-          dispatch! :after_create
-        end
-      end
-
-      def after_create(form, **)
+      def enqueue_after_create_job!(options)
         ActiveRecord::Base.after_transaction do
-          Claims::Callback::AfterCreateJob.perform_later(form.model)
+          Claims::Callback::AfterCreateJob.perform_later(options[:model])
         end
       end
 

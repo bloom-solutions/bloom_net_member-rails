@@ -2,8 +2,7 @@ module Txns
   module Operation
     class Show < ApplicationOperation
 
-      include Model
-      model Txn, :find
+      step Model(Txn, :find)
 
     end
   end

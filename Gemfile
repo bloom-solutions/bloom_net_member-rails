@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem "slim-rails", "~> 3.1"
-gem "trailblazer-rails", "0.4.0"
+gem "trailblazer-rails", "1.0.2"
 gem "cells-rails", "0.0.6"
 gem "trailblazer-cells", "0.0.3"
 gem "cells-slim", "0.0.5"
@@ -43,10 +43,12 @@ gem "light-service", "0.6.1"
 gem "dry-validation", "0.10.4"
 gem "bloom_net_central_client", "~> 0.1.0"
 gem "bridge_client", "0.1.0"
+gem "devise", "~> 4.2"
 
 group :development, :test do
   gem "pry-byebug"
   gem "rspec-rails", "~> 3.5"
+  gem "dotenv-rails"
 end
 
 group :development do
