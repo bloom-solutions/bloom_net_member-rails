@@ -41,8 +41,8 @@ gem "sidekiq", "~> 4.2"
 gem "pg", "0.19.0"
 gem "light-service", "0.6.1"
 gem "dry-validation", "0.10.4"
-gem "bloom_net_central_client", "~> 0.1.0"
-gem "bridge_client", "0.1.0"
+gem "bloom_net_central_client", "~> 0.2.0"
+gem "bridge_client", "0.2.0"
 gem "devise", "~> 4.2"
 
 group :development, :test do
