@@ -8,8 +8,8 @@ module Txns
         step self::Contract::Validate(key: "txn")
         step self::Contract::Persist()
         failure :log_error!
-        step :enqueue_after_create_job!
       }
+      step :enqueue_after_create_job!
 
       private
 
