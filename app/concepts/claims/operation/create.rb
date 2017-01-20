@@ -10,7 +10,7 @@ module Claims
 
       def enqueue_after_create_job!(options)
         ActiveRecord::Base.after_transaction do
-          Claims::Callback::AfterCreateJob.perform_later(options[:model])
+          Claims::Callback::AfterCreateJob.perform_later(options["model"])
         end
       end
 
