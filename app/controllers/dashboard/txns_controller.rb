@@ -6,7 +6,7 @@ module Dashboard
     end
 
     def create
-      run(Txns::Operation::Create, params[:txn]) do |result|
+      run(Txns::Operation::Create) do |result|
         return redirect_to(dashboard_txn_path(result["model"]))
       end
 
