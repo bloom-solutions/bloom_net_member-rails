@@ -28,3 +28,4 @@ config/database.yml
 
 latest.dump
 .env.local
+.env.bridge.local

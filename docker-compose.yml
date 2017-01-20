@@ -27,6 +27,7 @@ services:
     links:
       - redis
       - mail
+      - bridge
     volumes_from:
       - bundle
     volumes:
@@ -49,13 +50,16 @@ services:
   #     - .:/app
   #     - ../:/src
   sidekiq:
-    build: .
+    build:
+      dockerfile: "ops/dev/Dockerfile"
+      context: .
     command: bundle exec sidekiq -C config/sidekiq.yml
     depends_on:
       - db
     links:
       - redis
       - mail
+      - bridge
     env_file:
       - .env
       - .env.local
@@ -73,8 +77,26 @@ services:
     ports:
       - "1080:80"
     # NOTE: no need to expose 25 because its image already calls EXPOSE 25
+    #
+  bridge:
+    image: bloomsolutions/stellar-bridge:v1
+    ports:
+      - "8001:8001"
+    depends_on:
+      - bridge_db
+    env_file:
+      - .env.bridge
+      - .env.bridge.local
+  bridge_db:
+    image: postgres:9.5
+    expose:
+      - "5432"
+    volumes:
+      - bridge_db:/var/lib/postgresql/data
+
 volumes:
   redis:
   postgres:
   bundle:
   src:
+  bridge_db:
