@@ -2,24 +2,23 @@ module Txns
   module Operation
     class Create < ApplicationOperation
 
-      include Model
-      model Txn, :create
+      step Wrap ->(*, &block) { ActiveRecord::Base.transaction { block.call } } {
+        step Model(::Txn, :new)
+        step self::Contract::Build(constant: Contract::Create)
+        step self::Contract::Validate(key: "txn")
+        step self::Contract::Persist()
+        failure :log_error!
+        step :enqueue_after_create_job!
+      }
 
-      contract Contract::Create
+      private
 
-      include Dispatch
-      callback(:after_create) { on_change(:after_create) }
-
-      def process(params)
-        validate(params[:txn]) do |f|
-          f.save
-          dispatch! :after_create
-        end
+      def log_error!(options, params:, **args)
       end
 
-      def after_create(form, **)
+      def enqueue_after_create_job!(options)
         ActiveRecord::Base.after_transaction do
-          Txns::Callback::AfterCreateJob.perform_later(form.model)
+          Txns::Callback::AfterCreateJob.perform_later(options["model"])
         end
       end
 

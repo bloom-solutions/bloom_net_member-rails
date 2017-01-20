@@ -2,8 +2,7 @@ module Claims
   module Operation
     class Show < ApplicationOperation
 
-      include Model
-      model Claim, :find
+      step Model(Claim, :find)
 
     end
   end

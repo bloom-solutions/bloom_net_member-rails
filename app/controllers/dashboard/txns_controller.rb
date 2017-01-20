@@ -2,19 +2,19 @@ module Dashboard
   class TxnsController < BaseController
 
     def new
-      form Txns::Operation::Create
+      run Txns::Operation::New
     end
 
     def create
-      run Txns::Operation::Create do |op|
-        return redirect_to(dashboard_path(op.model))
+      run(Txns::Operation::Create, params[:txn]) do |result|
+        return redirect_to(dashboard_txn_path(result["model"]))
       end
 
-      render action: :new
+      render :new
     end
 
     def show
-      present Txns::Operation::Show
+      run Txns::Operation::Show
     end
 
   end
