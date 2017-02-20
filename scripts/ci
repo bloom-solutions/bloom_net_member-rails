@@ -1,0 +1,18 @@
+#!/bin/bash
+# Usage: script/ci [command]
+# Run the test suite on a Codeship build machine.
+
+# This makes sure the script fails on the first failing command
+set -e
+
+# Adding a check so an argument has to be passed to the container
+COMMAND=${1:?'You need to pass a command as the first parameter!'}
+
+# Create and init the database
+bundle exec rake db:create db:schema:load
+
+case $COMMAND in
+specs)
+  bundle exec rspec spec
+  ;;
+esac

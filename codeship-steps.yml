@@ -1,0 +1,24 @@
+- name: ci
+  type: parallel
+  steps:
+    - type: serial
+      steps:
+        - name: wait for redis and PG
+          service: app
+          command: ./scripts/ci-wait-db
+        - service: app
+          command: scripts/ci specs
+        - service: app
+          type: push
+          tag: /staging_\d+/
+          image_name: bloomsolutions/bloom_net_member
+          image_tag: staging-latest
+          registry: https://057358853552.dkr.ecr.us-west-2.amazonaws.com
+          dockercfg_service: aws_generator
+        - service: app
+          type: push
+          tag: /staging_\d+/
+          image_name: bloomsolutions/bloom_net_member
+          image_tag: staging-{{.CommitID}}
+          registry: https://057358853552.dkr.ecr.us-west-2.amazonaws.com
+          dockercfg_service: aws_generator

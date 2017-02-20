@@ -1,0 +1,19 @@
+app:
+  build:
+    image: bloomsolutions/bloom_net_member:test-latest
+    context: .
+    dockerfile: ops/test/Dockerfile
+  encrypted_env_file: .env.codeship.encrypted
+  links:
+    - redis
+    - db
+  cached: true
+redis:
+  image: redis:3.0.5
+db:
+  image: postgres:9.6.1
+
+aws_generator:
+  image: codeship/aws-ecr-dockercfg-generator
+  encrypted_env_file: .env.codeship.encrypted
+  add_docker: true
