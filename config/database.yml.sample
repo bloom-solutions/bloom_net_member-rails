@@ -9,6 +9,10 @@ development: &default
   host: localhost
   # host: member_1_web_db
 
+production:
+  <<: *default
+  database: postgres
+
 test:
   <<: *default
   database: app_test

@@ -1,0 +1,12 @@
+sudo: required
+services:
+  - docker
+language: ruby
+cache: bundler
+rvm:
+ - 2.4.0
+before_script:
+  - cp config/database.yml{.sample,}
+  - bundle exec rake db:create db:test:prepare
+after_success:
+  - ./scripts/build
