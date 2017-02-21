@@ -20,7 +20,11 @@ ENV BUNDLE_GEMFILE=$APP/Gemfile \
   PATH=./bin:$PATH \
   RAILS_PORT=3000 \
   RAILS_BINDING=0.0.0.0 \
-  RAILS_ENV=production
+  RAILS_ENV=production \
+  # To get it to compile
+  BLOOM_NET_CENTRAL_HOST=http://localhost \
+  STELLAR_BRIDGE_HOST=http://host \
+  SECRET_KEY_BASE=asdfasdfasdfasdfasdfasd
 
 RUN mkdir $BUNDLE_PATH
 
