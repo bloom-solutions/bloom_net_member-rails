@@ -38,4 +38,4 @@ ADD . $APP
 RUN cp $APP/config/database.yml.sample $APP/config/database.yml && \
   bundle exec rake assets:precompile
 
-CMD ["/usr/local/bin/bundle", "exec", "rails", "s", "-p", $RAILS_PORT, "-b", $RAILS_BINDING]
+CMD ["bundle", "exec", "rails", "s", "-p", $RAILS_PORT, "-b", $RAILS_BINDING]
