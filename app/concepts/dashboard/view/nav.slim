@@ -10,18 +10,21 @@ nav.navbar.navbar-default.navbar-static-top role='navigation'
   ul.nav.navbar-top-links.navbar-right
     li.dropdown
       a.dropdown-toggle data-toggle="dropdown" href="#"
-        i.fa.fa-user.fa-fw
-        i.fa.fa-caret-down
+        = h.fa_icon "user"
+        = h.fa_icon "caret-down"
       ul.dropdown-menu.dropdown-user
         li= link_to dashboard_user_path do
-          i.fa.fa-user.fa-fw>
+          = h.fa_icon "user"
+          = h.fa_icon "fw"
           | Agent Profile
         li
           a href="#"
-            i.fa.fa-gear.fa-fw
-            |  Settings
+            = h.fa_icon "gear"
+            = h.fa_icon "fw"
+            | Settings
         li.divider
         li
           a href="#"
-            i.fa.fa-sign-out.fa-fw
-            |  Logout
+            = h.fa_icon "sign-out"
+            = h.fa_icon "fw"
+            | Logout
