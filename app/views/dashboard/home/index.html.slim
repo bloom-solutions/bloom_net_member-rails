@@ -6,12 +6,12 @@
   .row
     .col-xs-6
       = link_to new_dashboard_txn_path, class: "btn btn-primary btn-full" do
-        i.fa.fa-upload
+        = fa_icon "upload"
         br
         span.text Send
     .col-xs-6
       = link_to new_dashboard_claim_path, class: "btn btn-primary btn-full" do
-        i.fa.fa-download
+        = fa_icon "download"
         br
         span.text Claim
 

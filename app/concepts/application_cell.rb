@@ -17,6 +17,7 @@ class ApplicationCell < Trailblazer::Cell
     ActionView::RecordIdentifier,
     ApplicationHelper,
     SimpleForm::ActionViewExtensions::FormHelper,
+    FontAwesome::Rails::IconHelper,
   ]
 
   def helper

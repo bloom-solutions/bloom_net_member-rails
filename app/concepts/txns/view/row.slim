@@ -7,8 +7,8 @@ tr
   td= date
   td
     = link_to [:dashboard, model], class: "btn btn-default btn-xs", role: "button" do
-      i.fa.fa-eye
+      = h.fa_icon "eye"
       span.text.hidden-xs< View
     = link_to "#", class: "btn btn-default btn-xs", role: "button" do
-      i.fa.fa-remove
+      = h.fa_icon "remove"
       span.text.hidden-xs< Cancel
