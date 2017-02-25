@@ -22,5 +22,5 @@ Rails.application.config.assets.precompile += [
   "morrisjs/morris.min.js",
   "sb-admin-2.min.css",
   "sb-admin-2.min.js",
-  /\.(?:svg|eot|woff|ttf)$/,
+  /\.(?:svg|eot|woff|woff2|ttf)$/,
 ]

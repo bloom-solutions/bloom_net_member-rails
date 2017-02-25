@@ -4,7 +4,7 @@
       .panel-heading
         .row
           .col-xs-3
-            i.fa.fa-angle-double-up.fa-5x
+            = h.fa_icon "angle-double-up", class: "fa-5x"
           .col-xs-9.text-right
             .huge= outbound_today_count
             div Outbound Today
@@ -13,7 +13,7 @@
       .panel-heading
         .row
           .col-xs-3
-            i.fa.fa-angle-double-down.fa-5x
+            = h.fa_icon "angle-double-down", class: "fa-5x"
           .col-xs-9.text-right
             .huge= inbound_today_count
             div Inbound Today
