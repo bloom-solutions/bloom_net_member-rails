@@ -17,3 +17,4 @@ if user.nil?
   user.skip_confirmation!
   user.save!
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')

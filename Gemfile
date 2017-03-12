@@ -45,6 +45,7 @@ gem "dry-validation", "0.10.4"
 gem "bloom_net_central_client", "~> 0.2.0"
 gem "bridge_client", "0.2.0"
 gem "devise", "~> 4.2"
+gem "activeadmin", "1.0.0.pre5"
 
 group :development, :test do
   gem "pry-byebug"
