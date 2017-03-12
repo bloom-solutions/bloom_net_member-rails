@@ -2,7 +2,7 @@ module Txns
   module Operation
     class Create < ApplicationOperation
 
-      step Wrap ->(*, &block) { ActiveRecord::Base.transaction { block.call } } {
+      step Wrap(active_record_transaction) {
         step Model(::Txn, :new)
         step self::Contract::Build(constant: Contract::Create)
         step self::Contract::Validate(key: "txn")
