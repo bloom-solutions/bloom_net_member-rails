@@ -24,7 +24,7 @@ nav.navbar.navbar-default.navbar-static-top role='navigation'
             | Settings
         li.divider
         li
-          a href="#"
+          = link_to destroy_user_session_path, method: :delete do
             = h.fa_icon "sign-out"
             = h.fa_icon "fw"
             | Logout

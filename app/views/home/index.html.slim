@@ -1,0 +1,8 @@
+.container
+  .jumbotron
+    h1 BloomNet Member
+    p Sign in to begin sending and claiming transactions.
+    p
+      = link_to "Sign in", new_user_session_path, class: "btn btn-primary btn-lg"
+      span<> or
+      = link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg"

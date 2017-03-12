@@ -9,6 +9,7 @@ class User < ApplicationRecord
     :timeoutable,
     :trackable,
     :validatable,
+    :registerable,
   )
 
 end
