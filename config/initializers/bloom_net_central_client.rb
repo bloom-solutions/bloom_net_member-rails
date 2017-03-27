@@ -1,3 +1,3 @@
-BloomNetCentralClient.configure do |c|
+BloomNetCenterClient.configure do |c|
   c.host = ENV["BLOOM_NET_CENTRAL_HOST"]
 end
