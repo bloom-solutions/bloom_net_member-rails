@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170312071634) do
+ActiveRecord::Schema.define(version: 20170328060930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,10 +85,19 @@ ActiveRecord::Schema.define(version: 20170312071634) do
     t.datetime "updated_at",                           null: false
     t.string   "sender_first_name"
     t.string   "sender_last_name"
-    t.string   "recipient_mobile"
+    t.string   "recipient_mobile",                     null: false
     t.string   "remote_status"
     t.integer  "status",               default: 0
     t.integer  "user_id"
+    t.string   "sender_street"
+    t.string   "sender_city"
+    t.string   "sender_province"
+    t.string   "sender_region"
+    t.string   "sender_mobile"
+    t.string   "recipient_street"
+    t.string   "recipient_city"
+    t.string   "recipient_province"
+    t.string   "recipient_region"
     t.index ["external_id"], name: "index_txns_on_external_id", using: :btree
     t.index ["ref_no"], name: "index_txns_on_ref_no", unique: true, using: :btree
     t.index ["status"], name: "index_txns_on_status", using: :btree
