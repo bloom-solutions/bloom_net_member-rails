@@ -1,0 +1,13 @@
+defaults: &defaults
+  stellar_lookout_url: <%= ENV["STELLAR_LOOKOUT_URL"] %>
+  bloom_net_issuer_account: <%= ENV["BLOOM_NET_ISSUER_ACCOUNT"] %>
+  bloom_net_center_host: <%= ENV["BLOOM_NET_CENTER_HOST"] %>
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

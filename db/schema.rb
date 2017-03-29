@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328060930) do
+ActiveRecord::Schema.define(version: 20170329060658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,34 @@ ActiveRecord::Schema.define(version: 20170328060930) do
     t.index ["status"], name: "index_claims_on_status", using: :btree
   end
 
+  create_table "stellar_lookout_operations", force: :cascade do |t|
+    t.integer  "ward_id"
+    t.text     "body",            null: false
+    t.string   "txn_external_id", null: false
+    t.string   "external_id",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["external_id"], name: "index_stellar_lookout_operations_on_external_id", using: :btree
+    t.index ["txn_external_id"], name: "index_stellar_lookout_operations_on_txn_external_id", using: :btree
+    t.index ["ward_id"], name: "index_stellar_lookout_operations_on_ward_id", using: :btree
+  end
+
+  create_table "stellar_lookout_txns", force: :cascade do |t|
+    t.string   "external_id", null: false
+    t.text     "body"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["external_id"], name: "index_stellar_lookout_txns_on_external_id", unique: true, using: :btree
+  end
+
+  create_table "stellar_lookout_wards", force: :cascade do |t|
+    t.string   "address",    null: false
+    t.string   "secret",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address"], name: "index_stellar_lookout_wards_on_address", using: :btree
+  end
+
   create_table "txns", force: :cascade do |t|
     t.string   "recipient_first_name",                 null: false
     t.string   "recipient_last_name",                  null: false
@@ -98,6 +126,8 @@ ActiveRecord::Schema.define(version: 20170328060930) do
     t.string   "recipient_city"
     t.string   "recipient_province"
     t.string   "recipient_region"
+    t.string   "address"
+    t.string   "currency"
     t.index ["external_id"], name: "index_txns_on_external_id", using: :btree
     t.index ["ref_no"], name: "index_txns_on_ref_no", unique: true, using: :btree
     t.index ["status"], name: "index_txns_on_status", using: :btree
@@ -128,5 +158,7 @@ ActiveRecord::Schema.define(version: 20170328060930) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "stellar_lookout_operations", "stellar_lookout_txns", column: "txn_external_id", primary_key: "external_id"
+  add_foreign_key "stellar_lookout_operations", "stellar_lookout_wards", column: "ward_id"
   add_foreign_key "txns", "users"
 end

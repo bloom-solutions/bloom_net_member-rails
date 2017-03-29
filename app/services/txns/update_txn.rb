@@ -2,7 +2,7 @@ module Txns
   class UpdateTxn
 
     extend LightService::Action
-    expects :create_txn_response
+    expects :create_txn_response, :txn
 
     executed do |c|
       response = c.create_txn_response
@@ -12,9 +12,10 @@ module Txns
         remote_txn = response.txn
         txn.update_attributes!(
           external_id: remote_txn.id,
-          ref_no: remote_txn.ref_no,
+          ref_no: remote_txn.id,
           status: "funding",
           remote_status: remote_txn.status,
+          address: remote_txn.account,
         )
       else
         txn.central_error!

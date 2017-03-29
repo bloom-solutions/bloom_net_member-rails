@@ -46,11 +46,18 @@ gem "bloom_net_center_client", "~> 0.3.0"
 gem "bridge_client", github: "imacchiato/bridge_client-ruby"
 gem "devise", "~> 4.2"
 gem "activeadmin", "1.0.0.pre5"
+gem "settingslogic", "~> 2.0"
+gem "stellar_lookout-rails", github: "imacchiato/stellar_lookout-rails"
 
 group :development, :test do
   gem "pry-byebug"
   gem "rspec-rails", "~> 3.5"
   gem "dotenv-rails"
+end
+
+group :test do
+  gem "factory_girl_rails", "~> 4.0"
+  gem "database_cleaner"
 end
 
 group :development do
