@@ -6,7 +6,7 @@ module Txns
 
       def self.call(txn)
         with(txn: txn).reduce(
-          BloomNetCentral::InitializeClient,
+          BloomNetCenter::InitializeClient,
           CreateRemoteTxn,
           UpdateTxn,
           StellarBridge::InitializeClient,

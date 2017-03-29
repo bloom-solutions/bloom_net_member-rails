@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.0.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -42,15 +42,22 @@ gem "sidekiq", "~> 4.2"
 gem "pg", "0.19.0"
 gem "light-service", "0.6.1"
 gem "dry-validation", "0.10.4"
-gem "bloom_net_central_client", "~> 0.2.0"
-gem "bridge_client", "0.2.0"
+gem "bloom_net_center_client", "~> 0.3.0"
+gem "bridge_client", github: "imacchiato/bridge_client-ruby"
 gem "devise", "~> 4.2"
 gem "activeadmin", "1.0.0.pre5"
+gem "settingslogic", "~> 2.0"
+gem "stellar_lookout-rails", github: "imacchiato/stellar_lookout-rails"
 
 group :development, :test do
   gem "pry-byebug"
   gem "rspec-rails", "~> 3.5"
   gem "dotenv-rails"
+end
+
+group :test do
+  gem "factory_girl_rails", "~> 4.0"
+  gem "database_cleaner"
 end
 
 group :development do

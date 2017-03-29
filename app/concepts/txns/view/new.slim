@@ -1,14 +1,37 @@
 = simple_form_for [:dashboard, model] do |f|
-  .row
-    .col-md-6
-      = f.input :sender_first_name
-    .col-md-6
-      = f.input :sender_last_name
-  .row
-    .col-md-6
-      = f.input :recipient_first_name
-    .col-md-6
-      = f.input :recipient_last_name
-  = f.input :recipient_mobile
-  = f.input :amount, placeholder: "500", input_html: { value: nil }
+  .fieldset
+    legend Sender Info
+    .row
+      .col-sm-6.col-md-4
+        = f.input :sender_first_name, required: true
+      .col-sm-6.col-md-4
+        = f.input :sender_last_name, required: true
+      .col-sm-6.col-md-4
+        = f.input :sender_mobile, required: true
+      .col-sm-6.col-md-4
+        = f.input :sender_street, required: false
+      .col-sm-6.col-md-4
+        = f.input :sender_city, required: false
+      .col-sm-6.col-md-4
+        = f.input :sender_region, required: false
+  .fieldset
+    legend Recipient Info
+    .row
+      .col-sm-6.col-md-4
+        = f.input :recipient_first_name, required: true
+      .col-sm-6.col-md-4
+        = f.input :recipient_last_name, required: true
+      .col-sm-6.col-md-4
+        = f.input :recipient_mobile, required: true
+      .col-sm-6.col-md-4
+        = f.input :recipient_street, required: false
+      .col-sm-6.col-md-4
+        = f.input :recipient_city, required: false
+      .col-sm-6.col-md-4
+        = f.input :recipient_region, required: false
+  .fieldset
+    legend Transaction Info
+    .row
+      .col-sm-6.col-md-4
+        = f.input :amount, placeholder: "500", input_html: { value: nil }, required: true
   = f.button :submit, class: "btn-primary btn-lg"
