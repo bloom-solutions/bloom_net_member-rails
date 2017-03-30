@@ -16,6 +16,7 @@ module Txns
 
     it "sends the txn amount to the address" do
       expect(bridge_client).to receive(:send_payment).with(
+        source: Settings.bloom_net_seed,
         destination: "GDAC",
         amount: 2500,
         asset_code: "PHP",

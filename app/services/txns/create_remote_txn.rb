@@ -2,16 +2,32 @@ module Txns
   class CreateRemoteTxn
 
     extend LightService::Action
-    expects :central_client, :txn
+    expects :center_client, :txn
     promises :create_txn_response
+
+    ATTRS = %i[
+      sender_first_name
+      sender_last_name
+      sender_mobile
+      sender_street
+      sender_city
+      sender_region
+      recipient_first_name
+      recipient_last_name
+      recipient_mobile
+      recipient_street
+      recipient_city
+      recipient_region
+      amount
+      currency
+    ]
 
     executed do |c|
       txn = c.txn
-
-      c.create_txn_response = c.central_client.create_txn(
-        recipient_first_name: txn.recipient_first_name,
-        recipient_last_name: txn.recipient_last_name,
-      )
+      attrs = ATTRS.each_with_object({}) do |attr, hash|
+        hash[attr] = txn.send(attr)
+      end
+      c.create_txn_response = c.center_client.create_txn(attrs)
     end
 
   end

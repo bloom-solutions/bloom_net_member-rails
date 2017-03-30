@@ -6,7 +6,7 @@ module Claims
     promises :find_txn_response
 
     executed do |c|
-      uri = URI.parse(ENV["BLOOM_NET_CENTRAL_HOST"])
+      uri = URI.parse(Settings.bloom_net_center.host)
       uri.path = "/api/v1/txns"
 
       headers = { "Content-Type" => "application/json" }

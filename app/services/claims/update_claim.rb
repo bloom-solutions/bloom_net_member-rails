@@ -5,7 +5,7 @@ module Claims
     expects :claim, :find_txn_response
 
     executed do |c|
-      # TODO: central should only show the txn if it's unclaimed, therefore,
+      # TODO: center should only show the txn if it's unclaimed, therefore,
       # the member can be sure that it's claimable
       body = JSON.parse(c.find_txn_response.body).with_indifferent_access
       data = body[:data]

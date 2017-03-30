@@ -1,7 +1,12 @@
 defaults: &defaults
   stellar_lookout_url: <%= ENV["STELLAR_LOOKOUT_URL"] %>
   bloom_net_issuer_account: <%= ENV["BLOOM_NET_ISSUER_ACCOUNT"] %>
-  bloom_net_center_host: <%= ENV["BLOOM_NET_CENTER_HOST"] %>
+  bloom_net_center:
+    host: <%= ENV["BLOOM_NET_CENTER_HOST"] %>
+    token: <%= ENV["BLOOM_NET_CENTER_TOKEN"] %>
+    secret: <%= ENV["BLOOM_NET_CENTER_SECRET"] %>
+  bloom_net_address: <%= ENV["BLOOM_NET_ADDRESS"] %>
+  bloom_net_seed: <%= ENV["BLOOM_NET_SEED"] %>
 
 development:
   <<: *defaults

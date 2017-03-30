@@ -9,8 +9,8 @@ module BridgeReceiveCallbacks
           ref_no: bridge_receive_callback.memo,
         )
 
-        # should really ask central what the status is. but what if we have
-        # processed the BRC but central hasn't yet?
+        # should really ask center what the status is. but what if we have
+        # processed the BRC but center hasn't yet?
         claim.update_attributes!(
           status: "completed",
           amount: bridge_receive_callback.amount,

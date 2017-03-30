@@ -1,7 +1,7 @@
 class Claim < ActiveRecord::Base
 
   enum(status: {
-    central_error: -1,
+    center_error: -1,
     fresh: 0,
     claiming: 1,
     completed: 2,

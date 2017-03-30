@@ -9,6 +9,7 @@ module Txns
       txn = c.txn
 
       c.bridge_response = c.bridge_client.send_payment(
+        source: Settings.bloom_net_seed,
         destination: txn.address,
         amount: txn.amount,
         asset_code: "PHP",

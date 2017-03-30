@@ -15,12 +15,14 @@ module Txns
       property :recipient_city
       property :recipient_region
       property :amount
+      property :currency, default: "PHP"
 
       validation :default do
         required(:recipient_first_name).filled
         required(:recipient_last_name).filled
         required(:recipient_mobile).filled
         required(:amount).filled
+        required(:currency).filled
       end
 
     end

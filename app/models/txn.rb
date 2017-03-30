@@ -2,7 +2,7 @@ class Txn < ActiveRecord::Base
 
   enum(status: {
     bridge_error: -3,
-    central_error: -2,
+    center_error: -2,
     lack_funds: -1,
     fresh: 0,
     funding: 1,

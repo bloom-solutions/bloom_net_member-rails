@@ -18,8 +18,8 @@ module Txns
           address: remote_txn.account,
         )
       else
-        txn.central_error!
-        c.fail! "Unable to create txn on Central: #{response.body}"
+        txn.center_error!
+        c.fail! "Unable to create txn on center: #{response.body}"
       end
     end
 

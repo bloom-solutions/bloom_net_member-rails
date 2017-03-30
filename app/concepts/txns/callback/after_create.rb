@@ -15,11 +15,11 @@ module Txns
           # responses. This way, we can recover if something goes wrong along
           # the way.
           SendPayment,
-          # TODO: best to get callback from central to know what status to
+          # TODO: best to get callback from center to know what status to
           # become
           SetFunded,
         )
-        # wait callback from central about `funded`, update status
+        # wait callback from center about `funded`, update status
         # after this:
         # - create callback for horizon
         # - mark txn as paid when callback is called
