@@ -1,17 +1,20 @@
 = cell(Dashboard::Cell::Nav).()
 
 .page-wrapper-no-sidebar
-  = cell(Dashboard::Cell::Stats).()
-
   .row
-    .col-xs-6
-      = link_to new_dashboard_txn_path, class: "btn btn-primary btn-full" do
-        = fa_icon "upload"
+    .col-xs-8
+      = cell(Dashboard::Cell::OutboundStats).()
+    .col-xs-4
+      = link_to new_dashboard_txn_path, class: "btn btn-primary btn-lg btn-block" do
+        = fa_icon "upload", class: "fa-3x"
         br
         span.text Send
-    .col-xs-6
-      = link_to new_dashboard_claim_path, class: "btn btn-primary btn-full" do
-        = fa_icon "download"
+  .row
+    .col-xs-8
+      = cell(Dashboard::Cell::InboundStats).()
+    .col-xs-4
+      = link_to new_dashboard_claim_path, class: "btn btn-primary btn-lg btn-block" do
+        = fa_icon "download", class: "fa-3x"
         br
         span.text Claim
 
