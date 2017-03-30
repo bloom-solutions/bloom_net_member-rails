@@ -1,0 +1,22 @@
+.row
+  .col-sm-12
+    = cell(Dashboard::Cell::SearchBar, nil, context: {query: params[:query]}).()
+.row
+  .col-sm-12
+    h1 Transaction Search
+.row
+  .col-sm-12
+    - if model.present?
+      dl
+        dt= h.t(:tracking_number)
+        dd= id
+        dt= h.t(:sender_full_name)
+        dd= sender_full_name
+        dt= h.t(:recipient_full_name)
+        dd= recipient_full_name
+        dt Amount
+        dd= amount
+        dt Status
+        dd= status
+    - else
+      p No results

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   namespace :dashboard do
     get '/' => 'home#index'
+    resource :search
     resources :txns, only: %i[new create show]
     resources :claims, only: %i[new create show]
     resource :user

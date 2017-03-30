@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem "slim-rails", "~> 3.1"
 gem "trailblazer-rails", "1.0.2"
-gem "cells-rails", "0.0.6"
+gem "cells-rails", "0.0.7"
 gem "trailblazer-cells", "0.0.3"
 gem "cells-slim", "0.0.5"
 gem "simple_form", "~> 3.3"
