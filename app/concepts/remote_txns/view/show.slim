@@ -7,16 +7,22 @@
 .row
   .col-sm-12
     - if model.present?
-      dl
-        dt= h.t(:tracking_number)
-        dd= id
-        dt= h.t(:sender_full_name)
-        dd= sender_full_name
-        dt= h.t(:recipient_full_name)
-        dd= recipient_full_name
-        dt Amount
-        dd= amount
-        dt Status
-        dd= status
+      table.table
+        tbody
+          tr
+            th.col-sm-4[scope="row"]= h.t(:tracking_number)
+            td= id
+          tr
+            th.col-sm-4[scope="row"]= h.t(:sender_full_name)
+            td= sender_full_name
+          tr
+            th.col-sm-4[scope="row"]= h.t(:recipient_full_name)
+            td= recipient_full_name
+          tr
+            th.col-sm-4[scope="row"] Amount
+            td= amount
+          tr
+            th.col-sm-4[scope="row"] Status
+            td= status
     - else
       p No results
