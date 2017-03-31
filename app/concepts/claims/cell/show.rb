@@ -20,10 +20,6 @@ module Claims
           strftime("%-m/%-d - %k:%M%P")
       end
 
-      def recipient_full_name
-        [model.recipient_last_name, model.recipient_first_name].join(", ")
-      end
-
     end
   end
 end
