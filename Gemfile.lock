@@ -1,15 +1,4 @@
 GIT
-  remote: git://github.com/imacchiato/bridge_client-ruby.git
-  revision: 27b4d84510b918e9712e9d249557e2e91b6c5aa8
-  specs:
-    bridge_client (0.2.0)
-      activesupport (>= 3.0.0)
-      api_client_base (~> 1.0)
-      gem_config (~> 0.3.1)
-      typhoeus (~> 1.1)
-      virtus (~> 1.0)
-
-GIT
   remote: git://github.com/imacchiato/stellar_lookout-rails.git
   revision: c2b37da7b906e27a5a7027e1335c20248b232743
   specs:
@@ -98,6 +87,12 @@ GEM
     bourbon (4.3.3)
       sass (~> 3.4)
       thor (~> 0.19)
+    bridge_client (0.3.0)
+      activesupport (>= 3.0.0)
+      api_client_base (~> 1.0)
+      gem_config (~> 0.3.1)
+      typhoeus (~> 1.1)
+      virtus (~> 1.0)
     builder (3.2.3)
     byebug (9.0.6)
     cells (4.1.6)
@@ -425,7 +420,7 @@ DEPENDENCIES
   activeadmin (= 1.0.0.pre5)
   ar_after_transaction
   bloom_net_center_client (~> 0.3.0)
-  bridge_client!
+  bridge_client (= 0.3.0)
   cells-rails (= 0.0.7)
   cells-slim (= 0.0.5)
   coffee-rails (~> 4.2)
