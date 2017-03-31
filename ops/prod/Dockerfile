@@ -23,6 +23,8 @@ ENV BUNDLE_GEMFILE=$APP/Gemfile \
   RAILS_ENV=production \
   # To get it to compile
   BLOOM_NET_CENTER_HOST=http://localhost \
+  BLOOM_NET_CENTER_TOKEN=token \
+  BLOOM_NET_CENTER_SECRET=secret \
   STELLAR_BRIDGE_HOST=http://host \
   SECRET_KEY_BASE=asdfasdfasdfasdfasdfasd
 
