@@ -10,7 +10,7 @@ module Claims
     it "creates the claim on BloomNetCenter" do
       expect(client).to receive(:create_claim).with(
         ref_no: "JAKALA",
-        account
+        destination: Settings.bloom_net_address,
       ).and_return(response)
 
       expect(claim).to receive(:claiming!)
