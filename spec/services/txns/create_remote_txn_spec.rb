@@ -18,11 +18,14 @@ module Txns
         recipient_city: "RecipientCity",
         recipient_region: "RecipientRegion",
         amount: 100,
+        currency: "php",
       })
     end
-    let(:client) { BloomNetCenterClient::Client.new }
+    let(:client) { BloomNetCenter::InitializeClient.execute.center_client }
     let(:response) { BloomNetCenterClient::CreateTxnResponse.new }
-    let(:resulting_ctx) { described_class.execute(client: client, txn: txn) }
+    let(:resulting_ctx) do
+      described_class.execute(center_client: client, txn: txn)
+    end
 
     it "creates a Txn in BloomNet Center" do
       expect(client).to receive(:create_txn).with(
@@ -39,6 +42,7 @@ module Txns
         recipient_city: "RecipientCity",
         recipient_region: "RecipientRegion",
         amount: 100,
+        currency: "PHP",
       ).and_return(response)
 
       expect(resulting_ctx.create_txn_response).to eq response

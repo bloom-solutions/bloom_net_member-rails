@@ -27,6 +27,7 @@ module Txns
       attrs = ATTRS.each_with_object({}) do |attr, hash|
         hash[attr] = txn.send(attr)
       end
+      attrs[:currency] = attrs[:currency].upcase
       c.create_txn_response = c.center_client.create_txn(attrs)
     end
 

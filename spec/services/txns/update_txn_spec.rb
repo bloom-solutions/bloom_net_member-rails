@@ -44,8 +44,8 @@ module Txns
         BloomNetCenterClient::CreateTxnResponse.new(success: false, body: "body")
       end
 
-      it "marks the txn with `central_error` and fails the ctx" do
-        expect(txn).to receive(:central_error!)
+      it "marks the txn with `center_error` and fails the ctx" do
+        expect(txn).to receive(:center_error!)
         expect(resulting_ctx).to be_failure
       end
     end
