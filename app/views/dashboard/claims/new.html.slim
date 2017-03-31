@@ -2,4 +2,4 @@
 
 h1 Claim
 
-= cell(Claims::Cell::New, @form).()
+= cell(Claims::Cell::New, @form, context: {ref_no: params[:ref_no]}).()
