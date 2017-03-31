@@ -8,7 +8,7 @@ module Claims
     executed do |c|
       c.create_claim_response = c.center_client.create_claim({
         ref_no: c.claim.ref_no,
-        destination: Settings.bloom_net_address,
+        account: Settings.bloom_net_address,
       })
 
       # TODO go to claiming only if the response is successful
