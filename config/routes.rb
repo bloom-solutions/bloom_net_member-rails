@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  mount StellarLookout::Engine => "/stellar_lookout"
   devise_for :users
   namespace :dashboard do
     get '/' => 'home#index'
