@@ -10,6 +10,7 @@ defaults: &defaults
     secret: <%= ENV["BLOOM_NET_CENTER_SECRET"] %>
   bloom_net_address: <%= ENV["BLOOM_NET_ADDRESS"] %>
   bloom_net_seed: <%= ENV["BLOOM_NET_SEED"] %>
+  stellar_bridge_url: <%= ENV["STELLAR_BRIDGE_URL"] %>
   smtp:
     username: <%= ENV["SMTP_USERNAME"] %>
     password: <%= ENV["SMTP_PASSWORD"] %>

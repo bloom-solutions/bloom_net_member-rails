@@ -23,7 +23,7 @@ ENV BUNDLE_GEMFILE=$APP/Gemfile \
   BLOOM_NET_CENTER_HOST=http://localhost \
   BLOOM_NET_CENTER_TOKEN=token \
   BLOOM_NET_CENTER_SECRET=secret \
-  STELLAR_BRIDGE_HOST=http://host \
+  STELLAR_BRIDGE_URL=http://host \
   SECRET_KEY_BASE=asdfasdfasdfasdfasdfasd
 
 RUN mkdir $BUNDLE_PATH
