@@ -18,8 +18,6 @@ ENV BUNDLE_GEMFILE=$APP/Gemfile \
   BUNDLE_JOBS=2 \
   BUNDLE_PATH=/bundle \
   PATH=./bin:$PATH \
-  RAILS_PORT=3000 \
-  RAILS_BINDING=0.0.0.0 \
   RAILS_ENV=production \
   # To get it to compile
   BLOOM_NET_CENTER_HOST=http://localhost \
@@ -39,5 +37,3 @@ ADD . $APP
 
 RUN cp $APP/config/database.yml.sample $APP/config/database.yml && \
   bundle exec rake assets:precompile
-
-CMD ["bundle", "exec", "rails", "s", "-p", $RAILS_PORT, "-b", $RAILS_BINDING]
