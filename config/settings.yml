@@ -9,6 +9,11 @@ defaults: &defaults
     secret: <%= ENV["BLOOM_NET_CENTER_SECRET"] %>
   bloom_net_address: <%= ENV["BLOOM_NET_ADDRESS"] %>
   bloom_net_seed: <%= ENV["BLOOM_NET_SEED"] %>
+  smtp:
+    username: <%= ENV["SMTP_USERNAME"] %>
+    password: <%= ENV["SMTP_PASSWORD"] %>
+    address: <%= ENV["SMTP_ADDRESS"] %>
+    port: <%= ENV["SMTP_PORT"] %>
 
 development:
   <<: *defaults
