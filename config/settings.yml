@@ -1,6 +1,7 @@
 defaults: &defaults
   port: <%= ENV["RAILS_PORT"] || 80 %>
   host: <%= ENV["RAILS_HOST"] || "localhost" %>
+  protocol: "http"
   stellar_lookout_url: <%= ENV["STELLAR_LOOKOUT_URL"] %>
   bloom_net_issuer_account: <%= ENV["BLOOM_NET_ISSUER_ACCOUNT"] %>
   bloom_net_center:
@@ -23,3 +24,4 @@ test:
 
 production:
   <<: *defaults
+  protocol: "https"
