@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/imacchiato/stellar_lookout-rails.git
-  revision: c2b37da7b906e27a5a7027e1335c20248b232743
+  revision: 20f2b29a898984b911062b56db64632fa7c9df30
   specs:
     stellar_lookout-rails (0.1.0)
       gem_config
