@@ -1,5 +1,9 @@
 = cell(Dashboard::Cell::Nav).()
 
-h1 Claim
+.row
+  .col-sm-12
+    h1 Claim
 
-= cell(Claims::Cell::Show, @model).()
+.row
+  .col-sm-12
+    = cell(Claims::Cell::Show, @model).()

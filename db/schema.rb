@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170331075119) do
+ActiveRecord::Schema.define(version: 20170402050300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,12 +64,12 @@ ActiveRecord::Schema.define(version: 20170331075119) do
   end
 
   create_table "claims", force: :cascade do |t|
-    t.string   "ref_no",     null: false
+    t.string   "ref_no",                 null: false
     t.decimal  "amount"
     t.string   "txn_status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "status"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "status",     default: 0, null: false
     t.index ["status"], name: "index_claims_on_status", using: :btree
   end
 
