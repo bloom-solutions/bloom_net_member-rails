@@ -10,12 +10,17 @@ module Txns
 
       if response.success?
         remote_txn = response.txn
-        txn.update_attributes!(
-          external_id: remote_txn.id,
-          ref_no: remote_txn.id,
-          status: "funding",
-          remote_status: remote_txn.status,
-          address: remote_txn.account,
+        Operation::Update.(
+          {
+            "txn" => {
+              external_id: remote_txn.id,
+              ref_no: remote_txn.id,
+              status: "funding",
+              remote_status: remote_txn.status,
+              address: remote_txn.account,
+            }
+          },
+          { "txn" => txn }
         )
       else
         txn.center_error!
