@@ -5,7 +5,10 @@ module Txns
     expects :txn
 
     executed do |c|
-      c.txn.update_attributes!(status: "fund_sent", remote_status: "funded")
+      Operation::Update.(
+        { "txn" => {status: "fund_sent", remote_status: "funded"} },
+        { "txn" => c.txn },
+      )
     end
 
   end
