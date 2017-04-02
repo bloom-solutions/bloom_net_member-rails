@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(version: 20170403022034) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "api_tokens", force: :cascade do |t|
+    t.integer  "integration_id"
+    t.string   "token",          null: false
+    t.string   "secret",         null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["integration_id"], name: "index_api_tokens_on_integration_id", using: :btree
+    t.index ["token"], name: "index_api_tokens_on_token", using: :btree
+  end
+
   create_table "bridge_receive_callbacks", force: :cascade do |t|
     t.bigint   "external_id", null: false
     t.string   "from",        null: false
@@ -71,6 +81,12 @@ ActiveRecord::Schema.define(version: 20170403022034) do
     t.datetime "updated_at",             null: false
     t.integer  "status",     default: 0, null: false
     t.index ["status"], name: "index_claims_on_status", using: :btree
+  end
+
+  create_table "integrations", force: :cascade do |t|
+    t.string   "callback_url", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "integration_data", force: :cascade do |t|
