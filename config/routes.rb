@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :txns, only: %i[update]
+      jsonapi_resources :claims, only: %i[create]
       resources :bridge do
         collection do
           post :receive

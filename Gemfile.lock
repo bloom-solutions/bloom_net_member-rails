@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/g5/jsonapi-resources-matchers.git
+  revision: 54fafb65d841944b06c72a58c315ebcfafd38e09
+  specs:
+    jsonapi-resources-matchers (1.0.0)
+      jsonapi-resources (>= 0.9.0)
+
+GIT
   remote: https://github.com/imacchiato/stellar_lookout-rails.git
   revision: 20f2b29a898984b911062b56db64632fa7c9df30
   specs:
@@ -211,6 +218,10 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
+    jsonapi-resources (0.9.0)
+      activerecord (>= 4.1)
+      concurrent-ruby
+      railties (>= 4.1)
     kaminari (1.0.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.0.1)
@@ -435,6 +446,8 @@ DEPENDENCIES
   httparty
   jbuilder (~> 2.5)
   jquery-rails
+  jsonapi-resources (= 0.9.0)
+  jsonapi-resources-matchers!
   light-service (= 0.6.1)
   listen (~> 3.0.5)
   pg (= 0.19.0)
