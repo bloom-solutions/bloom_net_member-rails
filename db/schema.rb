@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170402050300) do
+ActiveRecord::Schema.define(version: 20170403022034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,14 @@ ActiveRecord::Schema.define(version: 20170402050300) do
     t.datetime "updated_at",             null: false
     t.integer  "status",     default: 0, null: false
     t.index ["status"], name: "index_claims_on_status", using: :btree
+  end
+
+  create_table "integration_data", force: :cascade do |t|
+    t.string "owner_type", null: false
+    t.string "owner_id",   null: false
+    t.jsonb  "data"
+    t.index ["data"], name: "index_integration_data_on_data", using: :btree
+    t.index ["owner_type", "owner_id"], name: "index_integration_data_on_owner_type_and_owner_id", using: :btree
   end
 
   create_table "stellar_lookout_operations", force: :cascade do |t|

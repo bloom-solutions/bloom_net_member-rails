@@ -1,6 +1,6 @@
 .row
   .col-sm-12
-    h1 Transaction Search
+    h1 Claim
 .row
   .col-sm-12
     table.table
@@ -14,3 +14,5 @@
         tr
           th.col-sm-4[scope="row"] Status
           td= status
+  .col.sm-12
+    = cell(IntegrationData::Cell::Show, collection: model.integration_data).(:row)

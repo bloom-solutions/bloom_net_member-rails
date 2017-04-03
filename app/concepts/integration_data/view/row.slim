@@ -1,0 +1,8 @@
+.integration-datum
+  h2 External Data
+  table.table
+    tbody
+      - data.each do |k, v|
+        tr
+          th.col-sm-4[scope="row"]= k.titleize
+          td= v

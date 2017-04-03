@@ -7,6 +7,8 @@ class Claim < ActiveRecord::Base
     completed: 2,
   })
 
+  has_many :integration_data, as: :owner
+
   scope :created_at_or_after, ->(time) do
     where(arel_table[:created_at].lteq(time))
   end
