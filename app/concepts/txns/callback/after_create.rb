@@ -15,6 +15,7 @@ module Txns
           # responses. This way, we can recover if something goes wrong along
           # the way.
           SendPayment,
+          WatchAddress,
         )
         # wait callback from center about `funded`, update status
         # after this:
