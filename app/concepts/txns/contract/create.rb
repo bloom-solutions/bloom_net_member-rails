@@ -18,9 +18,14 @@ module Txns
       property :currency, default: "PHP"
 
       validation :default do
+        required(:sender_first_name).filled
+        required(:sender_last_name).filled
+        required(:sender_mobile).filled
+        required(:sender_street).filled
         required(:recipient_first_name).filled
         required(:recipient_last_name).filled
         required(:recipient_mobile).filled
+        required(:recipient_street).filled
         required(:amount).filled
         required(:currency).filled
       end
