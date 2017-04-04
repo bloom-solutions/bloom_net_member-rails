@@ -80,5 +80,25 @@ module StellarLookoutProcessing
       end
     end
 
+    context "operation is for a txn" do
+      let!(:claim) { create(:txn, ref_no: "AJAKALA", address: "GCAT") }
+      let(:stellar_lookout_txn) do
+        build(:stellar_lookout_txn, memo: "AJAKALA")
+      end
+      let(:stellar_lookout_operation) do
+        build_stubbed(:stellar_lookout_operation, {
+          txn: stellar_lookout_txn,
+          to: "GCAT",
+          amount: 5020.0,
+        })
+      end
+
+      it "calls ProcessOperationAsPaymentForTxn" do
+        expect(ProcessOperationAsPaymentForTxn).to receive(:call).
+          with(stellar_lookout_operation)
+        described_class.(stellar_lookout_operation)
+      end
+    end
+
   end
 end
