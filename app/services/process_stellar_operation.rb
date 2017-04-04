@@ -1,7 +1,7 @@
 class ProcessStellarOperation
 
-  def self.call(remote_op)
-    ProcessStellarOperationJob.perform_later(remote_op)
+  def self.call(operation)
+    StellarLookoutProcessing::ProcessOperationJob.perform_later(operation)
   end
 
 end
