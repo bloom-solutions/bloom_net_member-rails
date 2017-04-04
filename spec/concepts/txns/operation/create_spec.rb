@@ -13,6 +13,7 @@ module Txns
               "sender_first_name" => "Jimmy",
               "sender_last_name" => "Eat World",
               "sender_mobile" => "+63919191919",
+              "sender_street" => "Street",
               "recipient_first_name" => "Integrity",
               "recipient_last_name" => "Azul",
               "recipient_mobile" => "+6391571777777",
