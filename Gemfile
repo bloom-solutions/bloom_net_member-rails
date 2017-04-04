@@ -44,6 +44,7 @@ gem "ar_after_transaction"
 gem "httparty"
 gem "sidekiq", "~> 4.2"
 gem "pg", "0.19.0"
+gem "jsonapi-resources", "0.9.0"
 gem "light-service", "0.6.1"
 gem "dry-validation", "0.10.4"
 gem "bloom_net_center_client", "~> 0.3.0"
@@ -60,8 +61,10 @@ group :development, :test do
 end
 
 group :test do
+  gem "jsonapi-resources-matchers", github: "g5/jsonapi-resources-matchers"
   gem "factory_girl_rails", "~> 4.0"
   gem "database_cleaner"
+  gem "shoulda-matchers"
 end
 
 group :development do
