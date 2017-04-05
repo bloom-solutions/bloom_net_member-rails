@@ -84,7 +84,7 @@ GEM
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
     bcrypt (3.1.11)
-    bloom_net_center_client (0.3.1)
+    bloom_net_center_client (0.4.0)
       activesupport (>= 3.0)
       api_client_base (~> 1.2)
       gem_config (~> 0.3.1)
@@ -432,7 +432,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin (= 1.0.0.pre5)
   ar_after_transaction
-  bloom_net_center_client (~> 0.3.0)
+  bloom_net_center_client (~> 0.4.0)
   bridge_client (= 0.4.0)
   cells-rails (= 0.0.7)
   cells-slim (= 0.0.5)
