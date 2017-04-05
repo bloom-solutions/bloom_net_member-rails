@@ -94,7 +94,7 @@ GEM
     bourbon (4.3.3)
       sass (~> 3.4)
       thor (~> 0.19)
-    bridge_client (0.3.0)
+    bridge_client (0.4.0)
       activesupport (>= 3.0.0)
       api_client_base (~> 1.0)
       gem_config (~> 0.3.1)
@@ -433,7 +433,7 @@ DEPENDENCIES
   activeadmin (= 1.0.0.pre5)
   ar_after_transaction
   bloom_net_center_client (~> 0.3.0)
-  bridge_client (= 0.3.0)
+  bridge_client (= 0.4.0)
   cells-rails (= 0.0.7)
   cells-slim (= 0.0.5)
   coffee-rails (~> 4.2)

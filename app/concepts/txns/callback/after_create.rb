@@ -10,11 +10,8 @@ module Txns
           CreateRemoteTxn,
           UpdateTxn,
           StellarBridge::InitializeClient,
-          # create payment in horizon
-          # TODO: Move to create a payment object with its own status and
-          # responses. This way, we can recover if something goes wrong along
-          # the way.
           SendPayment,
+          HandleBridgeResponse,
           WatchAddress,
         )
         # wait callback from center about `funded`, update status
