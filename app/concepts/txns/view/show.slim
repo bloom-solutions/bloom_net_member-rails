@@ -1,11 +1,58 @@
-dl
-  dt= h.t(:tracking_number)
-  dd= model.ref_no
-  dt= h.t(:recipient_first_name)
-  dd= model.recipient_first_name
-  dt= h.t(:recipient_last_name)
-  dd= model.recipient_last_name
-  dt Amount
-  dd= model.amount
-  dt Status
-  dd= model.status
+.row
+  .col-sm-12
+    h1= h.t(:transaction)
+.row
+  .col-sm-12
+    table.table
+      tbody
+        tr
+          th.col-sm-4[scope="row"]= h.t(:tracking_number)
+          td= ref_no
+        tr
+          th.col-sm-4[scope="row"]= h.t(:sender_first_name)
+          td= sender_first_name
+        tr
+          th.col-sm-4[scope="row"]= h.t(:sender_last_name)
+          td= sender_last_name
+        tr
+          th.col-sm-4[scope="row"]= h.t(:sender_mobile)
+          td= sender_mobile
+        tr
+          th.col-sm-4[scope="row"]= h.t(:sender_street)
+          td= sender_street
+        tr
+          th.col-sm-4[scope="row"]= h.t(:sender_city)
+          td= sender_city
+        tr
+          th.col-sm-4[scope="row"]= h.t(:sender_province)
+          td= sender_province
+        tr
+          th.col-sm-4[scope="row"]= h.t(:sender_region)
+          td= sender_region
+        tr
+          th.col-sm-4[scope="row"]= h.t(:recipient_first_name)
+          td= recipient_first_name
+        tr
+          th.col-sm-4[scope="row"]= h.t(:recipient_last_name)
+          td= recipient_last_name
+        tr
+          th.col-sm-4[scope="row"]= h.t(:recipient_mobile)
+          td= recipient_mobile
+        tr
+          th.col-sm-4[scope="row"]= h.t(:recipient_street)
+          td= recipient_street
+        tr
+          th.col-sm-4[scope="row"]= h.t(:recipient_city)
+          td= recipient_city
+        tr
+          th.col-sm-4[scope="row"]= h.t(:recipient_province)
+          td= recipient_province
+        tr
+          th.col-sm-4[scope="row"]= h.t(:recipient_region)
+          td= recipient_region
+        tr
+          th.col-sm-4[scope="row"] Amount
+          td= amount
+        tr
+          th.col-sm-4[scope="row"] Status
+          td= status
