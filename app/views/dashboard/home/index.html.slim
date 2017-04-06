@@ -2,21 +2,10 @@
 
 .page-wrapper-no-sidebar
   .row
-    .col-xs-8
+    .col-xs-6
       = cell(Dashboard::Cell::OutboundStats).()
-    .col-xs-4
-      = link_to new_dashboard_txn_path, class: "btn btn-primary btn-lg btn-block" do
-        = fa_icon "upload", class: "fa-3x"
-        br
-        span.text Send
-  .row
-    .col-xs-8
+    .col-xs-6
       = cell(Dashboard::Cell::InboundStats).()
-    .col-xs-4
-      = link_to new_dashboard_claim_path, class: "btn btn-primary btn-lg btn-block" do
-        = fa_icon "download", class: "fa-3x"
-        br
-        span.text Claim
 
   .row
     .col.xs-12
