@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   namespace :dashboard do
     get '/' => 'home#index'
     resource :search
-    resources :txns, only: %i[new create show]
-    resources :claims, only: %i[new create show]
+    resources :txns, only: %i[new create show index]
+    resources :claims, only: %i[new create show index]
     resource :user
   end
 

@@ -4,15 +4,20 @@ nav.navbar.navbar-default.navbar-fixed-top role='navigation'
       = link_to h.page_title, dashboard_path, class: "navbar-brand"
 
     ul.nav.navbar-top-links.navbar-left
-      li
-        = link_to new_dashboard_txn_path do
-          span>= h.fa_icon "upload"
-          span Send
-      li
-        = link_to new_dashboard_claim_path do
-          span>= h.fa_icon "download"
-          span Claim
-      li
+      li>
+        .btn-toolbar
+        .btn-group role="group"
+          = link_to dashboard_txns_path, class: "btn btn-default" do
+            | Sends
+          = link_to new_dashboard_txn_path, class: "btn btn-default" do
+            = h.fa_icon "plus"
+      li>
+        .btn-group role="group"
+          = link_to dashboard_claims_path, class: "btn btn-default" do
+            | Claims
+          = link_to new_dashboard_claim_path, class: "btn btn-default" do
+            = h.fa_icon "plus"
+      li>
         = link_to dashboard_search_path do
           span= h.fa_icon "search"
 

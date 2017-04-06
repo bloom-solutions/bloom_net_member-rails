@@ -1,0 +1,18 @@
+= cell(Dashboard::Cell::Nav).()
+
+.row
+  .col-sm-12
+    h1= t(:transactions)
+
+  .col-lg-12.col-xl-6
+    table.table.table-striped
+      tr
+        th Tracking No.
+        th Remittance Status
+        th Amount
+        th Date
+        th>
+      - @claims.each do |claim|
+        = cell(Claims::Cell::Show, claim).(:row)
+
+    = paginate @claims

@@ -1,0 +1,20 @@
+= cell(Dashboard::Cell::Nav).()
+
+.row
+  .col-sm-12
+    h1= t(:transactions)
+
+  .col-lg-12.col-xl-6
+    table.table.table-striped
+      tr
+        th Sender
+        th Recipient
+        th Status
+        th Tracking No.
+        th Amount
+        th Date
+        th>
+      - @txns.each do |txn|
+        = cell(Txns::Cell::Show, txn).(:row)
+
+    = paginate @txns

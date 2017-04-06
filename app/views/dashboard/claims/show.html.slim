@@ -1,9 +1,3 @@
 = cell(Dashboard::Cell::Nav).()
 
-.row
-  .col-sm-12
-    h1 Claim
-
-.row
-  .col-sm-12
-    = cell(Claims::Cell::Show, @model).()
+= cell(Txns::Cell::Show, @model).()

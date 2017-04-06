@@ -17,5 +17,9 @@ module Dashboard
       run Claims::Operation::Show
     end
 
+    def index
+      @claims = Claim.order(created_at: :desc).page(params[:page])
+    end
+
   end
 end

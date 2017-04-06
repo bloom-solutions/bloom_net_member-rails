@@ -17,5 +17,9 @@ module Dashboard
       run Txns::Operation::Show
     end
 
+    def index
+      @txns = Txn.order(created_at: :desc).page(params[:page])
+    end
+
   end
 end
