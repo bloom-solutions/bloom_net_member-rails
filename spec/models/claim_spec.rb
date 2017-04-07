@@ -39,4 +39,16 @@ RSpec.describe Claim do
     end
   end
 
+  describe ".create" do
+    context "validates uniqueness of claimed transaction" do
+      let!(:claim_1) { create(:claim, ref_no: "123456") }
+
+      it "brings back an error message" do
+        claim_2 = build(:claim, ref_no: "123456")
+        resulting_claim = described_class.new(claim_2.attributes)
+        expect(resulting_claim).not_to be_valid
+      end
+    end
+  end
+
 end
