@@ -25,6 +25,10 @@
             th.col-sm-4[scope="row"] Status
             td= status
     .col-sm-4
-      = link_to "Claim", new_dashboard_claim_path(ref_no: id), class: "btn btn-primary btn-lg btn-block"
+      - if claimable?
+        = link_to "Claim", new_dashboard_claim_path(ref_no: id), class: "btn btn-primary btn-lg btn-block"
+      - else
+        = link_to status.capitalized, "", class: "btn btn-primary btn-lg btn-block disabled"
+
   - else
     p No results
