@@ -28,7 +28,7 @@
       - if claimable?
         = link_to "Claim", new_dashboard_claim_path(ref_no: id), class: "btn btn-primary btn-lg btn-block"
       - else
-        = link_to status.capitalized, "", class: "btn btn-primary btn-lg btn-block disabled"
+        = link_to "Claim", "", class: "btn btn-primary btn-lg btn-block disabled"
 
   - else
     p No results
