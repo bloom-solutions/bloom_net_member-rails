@@ -6,6 +6,18 @@ GIT
       jsonapi-resources (>= 0.9.0)
 
 GIT
+  remote: https://github.com/imacchiato/bloom_net_center_client-ruby.git
+  revision: ead588d0c52c419edba85119fa79c6b09f736856
+  specs:
+    bloom_net_center_client (0.5.0)
+      activesupport (>= 3.0)
+      api_client_base (~> 1.2)
+      gem_config (~> 0.3.1)
+      httparty (~> 0.14.0)
+      typhoeus (~> 1.1)
+      virtus (~> 1.0)
+
+GIT
   remote: https://github.com/imacchiato/stellar_lookout-rails.git
   revision: 392b9ea7156c267a0b744925c0788708bce96992
   specs:
@@ -84,13 +96,6 @@ GEM
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
     bcrypt (3.1.11)
-    bloom_net_center_client (0.4.0)
-      activesupport (>= 3.0)
-      api_client_base (~> 1.2)
-      gem_config (~> 0.3.1)
-      httparty (~> 0.14.0)
-      typhoeus (~> 1.1)
-      virtus (~> 1.0)
     bourbon (4.3.3)
       sass (~> 3.4)
       thor (~> 0.19)
@@ -432,7 +437,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin (= 1.0.0.pre5)
   ar_after_transaction
-  bloom_net_center_client (~> 0.4.0)
+  bloom_net_center_client!
   bridge_client (= 0.4.0)
   cells-rails (= 0.0.7)
   cells-slim (= 0.0.5)

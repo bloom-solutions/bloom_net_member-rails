@@ -22,6 +22,10 @@ module RemoteTxns
         [model.recipient_last_name, model.recipient_first_name].join(", ")
       end
 
+      def claimable?
+        model.status == BloomNetCenterClient::Txn::STATUSES[:funded]
+      end
+
     end
   end
 end
