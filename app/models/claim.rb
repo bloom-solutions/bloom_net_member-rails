@@ -22,8 +22,4 @@ class Claim < ActiveRecord::Base
       created_at_or_before(date.end_of_day)
   end
 
-  validates :ref_no, uniqueness: {
-    message: "Transaction %{value} already claimed or currently being claimed",
-  }
-
 end
