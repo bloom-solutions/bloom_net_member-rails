@@ -6,4 +6,4 @@ set -e
 docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
 
 export REPO_NAME=bloomsolutions/bloom_net_member-rails
-export GIT_REF=`git rev-parse --short --verify HEAD`
+export GIT_REF=`git rev-parse --short=7 --verify HEAD`
