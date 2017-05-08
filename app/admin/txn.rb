@@ -10,6 +10,7 @@ ActiveAdmin.register Txn do
     column :recipient_last_name
     column :recipient_first_name
     column :ref_no
+    column :tracking_no
     column :created_at
     actions
   end
@@ -19,6 +20,7 @@ ActiveAdmin.register Txn do
   filter :recipient_last_name
   filter :recipient_first_name
   filter :ref_no
+  filter :tracking_no
   filter :created_at
 
 end

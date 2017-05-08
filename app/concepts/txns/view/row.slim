@@ -2,13 +2,13 @@ tr
   td= sender_full_name
   td= recipient_full_name
   td= status
-  td= ref_no
+  td= tracking_no
   td= amount
   td= date
   td
     = link_to [:dashboard, model], class: "btn btn-default btn-xs", role: "button" do
       = h.fa_icon "eye"
       span.text.hidden-xs< View
-    = link_to dashboard_search_path(ref_no: ref_no), class: "btn btn-default btn-xs", role: "button" do
+    = link_to dashboard_search_path(tracking_no: tracking_no), class: "btn btn-default btn-xs", role: "button" do
       = h.fa_icon "remove"
       span.text.hidden-xs< Cancel

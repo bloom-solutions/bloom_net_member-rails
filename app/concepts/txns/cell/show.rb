@@ -2,7 +2,7 @@ module Txns
   module Cell
     class Show < ApplicationCell
 
-      property :ref_no
+      property :tracking_no
       property :status
       property :sender_first_name
       property :sender_last_name

@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  ref_no: "Tracking Number"
+  tracking_no: "Tracking Number"
   recipient_first_name: "Recipient's First Name"
   recipient_last_name: "Recipient's Last Name"
   helpers:

@@ -15,7 +15,7 @@ RSpec.describe "Api::V1::ClaimsController" do
           data: {
             type: "claims",
             attributes: {
-              "ref-no" => "KUMALALA",
+              "tracking-no" => "TRACKNO",
             }
           }
         }
@@ -34,10 +34,10 @@ RSpec.describe "Api::V1::ClaimsController" do
         data = response_body["data"]
 
         attributes = data["attributes"]
-        expect(attributes["ref-no"]).to eq "KUMALALA"
+        expect(attributes["tracking-no"]).to eq "TRACKNO"
         expect(attributes["status"]).to eq "fresh"
 
-        resulting_claim = Claim.find_by(ref_no: "KUMALALA")
+        resulting_claim = Claim.find_by(tracking_no: "KUMALALA")
 
         expect(Claims::Callback::AfterCreateJob).to have_been_enqueued.
           with(resulting_claim)
@@ -53,7 +53,7 @@ RSpec.describe "Api::V1::ClaimsController" do
           data: {
             type: "claims",
             attributes: {
-              "ref-no" => "KALALA",
+              "tracking-no" => "KALALA",
             }
           }
         }
