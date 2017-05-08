@@ -2,7 +2,7 @@ module Claims
   module Cell
     class Show < ApplicationCell
 
-      property :ref_no
+      property :tracking_no
       property :status
 
       def row

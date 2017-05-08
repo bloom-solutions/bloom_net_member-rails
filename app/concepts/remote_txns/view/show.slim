@@ -26,7 +26,7 @@
             td= status
     .col-sm-4
       - if claimable?
-        = link_to "Claim", new_dashboard_claim_path(ref_no: id), class: "btn btn-primary btn-lg btn-block"
+        = link_to "Claim", new_dashboard_claim_path(tracking_no: id), class: "btn btn-primary btn-lg btn-block"
       - else
         = link_to "Claim", "", class: "btn btn-primary btn-lg btn-block disabled"
 

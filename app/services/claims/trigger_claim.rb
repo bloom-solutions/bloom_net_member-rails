@@ -7,7 +7,7 @@ module Claims
 
     executed do |c|
       c.create_claim_response = c.center_client.create_claim({
-        ref_no: c.claim.ref_no,
+        tracking_no: c.claim.tracking_no,
         account: Settings.bloom_net_address,
       })
 

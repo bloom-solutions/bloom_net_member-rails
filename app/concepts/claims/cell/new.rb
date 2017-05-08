@@ -2,8 +2,8 @@ module Claims
   module Cell
     class New < ApplicationCell
 
-      def ref_no
-        context[:ref_no]
+      def tracking_no
+        context[:tracking_no]
       end
 
     end

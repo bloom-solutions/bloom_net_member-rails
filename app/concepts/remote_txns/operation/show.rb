@@ -7,8 +7,8 @@ module RemoteTxns
       private
 
       def find_model!(options, params:, **)
-        ref_no = params[:query]
-        response = center_client.find_txn(ref_no)
+        tracking_no = params[:query]
+        response = center_client.find_txn(tracking_no)
         options["model"] = response.success? ? response.txn : nil
       end
 

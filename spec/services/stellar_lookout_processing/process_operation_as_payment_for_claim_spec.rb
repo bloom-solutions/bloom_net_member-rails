@@ -3,7 +3,7 @@ require 'rails_helper'
 module StellarLookoutProcessing
   RSpec.describe ProcessOperationAsPaymentForClaim do
 
-    let!(:claim) { create(:claim, ref_no: "AJAKALA", status: "claiming") }
+    let!(:claim) { create(:claim, txn_ref_no: "AJAKALA", status: "claiming") }
     let(:stellar_lookout_txn) do
       build(:stellar_lookout_txn, memo: "AJAKALA")
     end

@@ -4,11 +4,8 @@ module Api
 
       after_create :enqueue_job
 
-      primary_key :ref_no
-      key_type :string
-
       attributes(*%i[
-        ref_no
+        tracking_no
         status
       ])
 
