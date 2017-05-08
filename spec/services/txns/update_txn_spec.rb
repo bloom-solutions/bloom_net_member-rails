@@ -21,15 +21,18 @@ module Txns
       end
       let(:remote_txn) do
         BloomNetCenterClient::Txn.new(
-          id: "KUMAWAWA",
+          id: "REFNO",
+          ref_no: "REFNO",
+          tracking_no: "TRACKNO",
           status: "unfunded",
           account: "GDAC",
         )
       end
 
       it "updates the local txn" do
-        expect(resulting_txn.external_id).to eq "KUMAWAWA"
-        expect(resulting_txn.ref_no).to eq "KUMAWAWA"
+        expect(resulting_txn.external_id).to eq "REFNO"
+        expect(resulting_txn.ref_no).to eq "REFNO"
+        expect(resulting_txn.tracking_no).to eq "TRACKNO"
         expect(resulting_txn.status).to eq "funding"
         expect(resulting_txn.remote_status).to eq "unfunded"
         expect(resulting_txn.address).to eq "GDAC"

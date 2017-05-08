@@ -5,11 +5,11 @@ module Claims
 
     let(:client) { BloomNetCenter::InitializeClient.execute.center_client }
     let(:response) { BloomNetCenterClient::CreateClaimResponse.new }
-    let(:claim) { build_stubbed(:claim, ref_no: "JAKALA") }
+    let(:claim) { build_stubbed(:claim, tracking_no: "JAKALA") }
 
     it "creates the claim on BloomNetCenter" do
       expect(client).to receive(:create_claim).with(
-        ref_no: "JAKALA",
+        tracking_no: "JAKALA",
         account: Settings.bloom_net_address,
       ).and_return(response)
 

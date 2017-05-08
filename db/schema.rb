@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403022034) do
+ActiveRecord::Schema.define(version: 20170508021008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,27 +74,30 @@ ActiveRecord::Schema.define(version: 20170403022034) do
   end
 
   create_table "claims", force: :cascade do |t|
-    t.string   "ref_no",                 null: false
+    t.string   "tracking_no",             null: false
     t.decimal  "amount"
     t.string   "txn_status"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.integer  "status",     default: 0, null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "status",      default: 0, null: false
+    t.string   "txn_ref_no"
     t.index ["status"], name: "index_claims_on_status", using: :btree
+    t.index ["txn_ref_no"], name: "index_claims_on_txn_ref_no", using: :btree
+  end
+
+  create_table "integration_data", force: :cascade do |t|
+    t.string "owner_type", null: false
+    t.string "string",     null: false
+    t.string "owner_id",   null: false
+    t.jsonb  "data"
+    t.index ["data"], name: "index_integration_data_on_data", using: :btree
+    t.index ["owner_type", "owner_id"], name: "index_integration_data_on_owner_type_and_owner_id", using: :btree
   end
 
   create_table "integrations", force: :cascade do |t|
     t.string   "callback_url", null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
-
-  create_table "integration_data", force: :cascade do |t|
-    t.string "owner_type", null: false
-    t.string "owner_id",   null: false
-    t.jsonb  "data"
-    t.index ["data"], name: "index_integration_data_on_data", using: :btree
-    t.index ["owner_type", "owner_id"], name: "index_integration_data_on_owner_type_and_owner_id", using: :btree
   end
 
   create_table "stellar_lookout_operations", force: :cascade do |t|
@@ -150,9 +153,11 @@ ActiveRecord::Schema.define(version: 20170403022034) do
     t.string   "recipient_region"
     t.string   "address"
     t.string   "currency"
+    t.string   "tracking_no"
     t.index ["external_id"], name: "index_txns_on_external_id", using: :btree
     t.index ["ref_no"], name: "index_txns_on_ref_no", unique: true, using: :btree
     t.index ["status"], name: "index_txns_on_status", using: :btree
+    t.index ["tracking_no"], name: "index_txns_on_tracking_no", using: :btree
     t.index ["user_id"], name: "index_txns_on_user_id", using: :btree
   end
 

@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/imacchiato/bloom_net_center_client-ruby.git
-  revision: ead588d0c52c419edba85119fa79c6b09f736856
+  revision: 89f7fe4f8c9008d55e0c7749871b7b808274e7b4
   specs:
     bloom_net_center_client (0.5.0)
       activesupport (>= 3.0)

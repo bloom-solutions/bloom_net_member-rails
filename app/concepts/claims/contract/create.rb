@@ -2,7 +2,7 @@ module Claims
   module Contract
     class Create < ApplicationContract
 
-      property :ref_no
+      property :tracking_no
 
     end
   end

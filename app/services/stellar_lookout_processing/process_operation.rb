@@ -15,7 +15,7 @@ module StellarLookoutProcessing
 
     def self.payment_for_claim?(operation)
       payment_to_our_address?(operation) &&
-        Claim.exists?(ref_no: operation.txn.memo)
+        Claim.exists?(txn_ref_no: operation.txn.memo)
     end
 
     def self.payment_for_txn?(operation)

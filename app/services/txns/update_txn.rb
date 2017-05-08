@@ -15,6 +15,7 @@ module Txns
             "txn" => {
               external_id: remote_txn.id,
               ref_no: remote_txn.id,
+              tracking_no: remote_txn.tracking_no,
               status: "funding",
               remote_status: remote_txn.status,
               address: remote_txn.account,
